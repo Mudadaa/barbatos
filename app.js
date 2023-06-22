@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner l'élément image
   const barbatos = document.getElementById("barbatos");
 
+
   // Définir les chemins d'accès aux images
   const front = "./img/face.png";
   const behind = "./img/dos.png";
   
   // je mets en place une image par défaut
   let currentImage = front;
+  const view = document.querySelector(".view");
+  
   
   // je crée une fonction qui va changer l'image
   function barbaSwitch() {
@@ -22,10 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
       barbatos.src = front;
       currentImage = front;
     }
+   
   }
-
+  view.addEventListener("click", barbaSwitch );
   // Ajouter un event listener pour le clic
-  barbatos.addEventListener("click", barbaSwitch())});
+  barbatos.addEventListener("click", barbaSwitch);
+});
 
-  // Utiliser event.preventDefault() si nécessaire
-document.addEventListener('DOMContentLoaded', function(){});
+
