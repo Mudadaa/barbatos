@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+   
+    overflow-y: scroll;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    height: 100vh;
+    width: 20vw;
+    background-color: whitesmoke;
+    border: 3px solid red;
+}
+.title{
+    background-color: firebrick;
+    display: block;
+}
+h1{
+    background-color: whitesmoke;
+    max-width: fit-content;
+}
+h1::first-letter {
+    font-size: 3rem;
+    color: firebrick;
+    background-color: whitesmoke;
+}
+
+.title, h1{
+    margin: 10px 0;
+    padding: 10px;
+}
+main {
+    border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+  
+   width: 80vw;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: burlywood;
+}
+
+.barbatos{
+    display : flex;
+    width: 50vw;
+    flex-direction:row;
+    justify-content:start;
+    align-items: flex-start;
+    border: solid 1px black;
+}
+
+.description{
+   display: block;
+
+    height: 60vh; 
+    width: 30vw;
+    background-color: beige;
+}
+h2{
+background-color: cornflowerblue;
+max-width: fit-content;
+}
+h2::sixth-letter {
+    font-size: 3rem;
+    color: whitesmoke;
+    background-color: firebrick;
+}
+
+h2, p{
+    margin: 6px 0px;
+    padding: 10px;
+}
+p.french, p.english, p.japanese{
+    border: solid 1px black;
+}
+
+button{
+    max-width: fit-content;
+}
+
