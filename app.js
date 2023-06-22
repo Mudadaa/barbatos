@@ -1,35 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
   // Le code JavaScript lié au DOM va ici
-
+const app = {
+  front : "./img/face.png",
+  behind : "./img/dos.png",
+  currentImage : 'Hassan',
   // Sélectionner l'élément image
-  const barbatos = document.getElementById("barbatos");
+  init: function(){
+    app.barbatos = document.getElementById("barbatos");
+    app.view = document.querySelector(".view");
+    app.view.addEventListener("click", app.barbaSwitch );
+    app.barbatos.addEventListener("click", app.barbaSwitch);
 
-
+  },
   // Définir les chemins d'accès aux images
-  const front = "./img/face.png";
-  const behind = "./img/dos.png";
   
   // je mets en place une image par défaut
-  let currentImage = front;
-  const view = document.querySelector(".view");
-  
   
   // je crée une fonction qui va changer l'image
-  function barbaSwitch() {
-    // Si l'image actuelle est l'image de face, alors je change l'image pour l'image de dos
-    if (currentImage === front) {
-      barbatos.src = behind;
-      currentImage = behind;
-    } else if (currentImage === behind) {
-      // Sinon, si l'image actuelle est l'image de dos, alors je change l'image pour l'image de face
-      barbatos.src = front;
-      currentImage = front;
-    }
-   
-  }
-  view.addEventListener("click", barbaSwitch );
-  // Ajouter un event listener pour le clic
-  barbatos.addEventListener("click", barbaSwitch);
-});
+  barbaSwitch: function() {
+    
+  
+    if (app.currentImage === app.front || app.currentImage === 'Hassan') { // Utiliser la propriété "src" pour comparer les chemins d'accès aux images
 
+      app.currentImage = app.behind; 
+      app.barbatos.src = app.behind
+    
+
+      // Mettre à jour la source de l'image avec l'image de dos
+    } else if (app.currentImage === app.behind) {
+
+      app.barbatos.src = app.front// Mettre à jour la source de l'image avec l'image de face
+     app.currentImage = app.front
+
+
+    }
+  }
+  // Ajouter un event listener pour le clic
+};
+
+document.addEventListener('DOMContentLoaded', app.init);
 
