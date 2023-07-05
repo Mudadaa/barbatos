@@ -1,8 +1,8 @@
 // document.addEventListener('DOMContentLoaded', function() {
   // Le code JavaScript lié au DOM va ici
 const app = {
-  front : "./img/face.png",
-  behind : "./img/dos.png",
+  front : "./public/img/face.png",
+  behind : "./public/img/dos.png",
   currentImage : 'Hassan',
   // Sélectionner l'élément image
   init: function(){
