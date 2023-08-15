@@ -1,19 +1,19 @@
 const dataMapper = require('./dataMapper.js');
 const mainController = {
-    homePage: async (request,response) => {
+    HomePage: async (request, response, next) => {
         try {
-            const gundamTrad= await dataMapper.getGundamTrad()
-                 
-            response.send(gundamTrad)
-            console.log(gundamTrad);
+            const GundamTrad = await dataMapper.getGundamTrad();
+            
+            response.send(GundamTrad);
+          
         } catch (error) {
             console.log(error)
 
-            response.status(500).send("Une erreur de server est survenue, désolé du soucis")
+            response.status(500).send("Une erreur de serveur est survenue, désolé du souci");
         }
-        
-    }
+      
+    }, 
    
- };
+};
 
 module.exports = mainController;

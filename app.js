@@ -1,4 +1,8 @@
 // document.addEventListener('DOMContentLoaded', function() {
+
+const { request } = require("express");
+const dataMapper = require("./app/dataMapper");
+
   // Le code JavaScript lié au DOM va ici
 const app = {
   front : "./public/img/face.png",
@@ -34,9 +38,22 @@ const app = {
 
 
     }
-  }
-  // Ajouter un event listener pour le clic
-};
+  },
+  
+  
+  async getEnglishTrad(){
+  const englishTrad =document.querySelector(".english");
+  
+    try {
+      const gundamTrad= await dataMapper.getGundamTrad()[0];
+      englishTrad.textContent=gundamTrad
+      console.log(gundamTrad);
+    } catch (error) {
+      console.log("Erreur 404")
+      response.status(404).send ("Une erreur est survenue")
+    }
 
+  }
+}
 document.addEventListener('DOMContentLoaded', app.init);
 

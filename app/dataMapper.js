@@ -7,9 +7,11 @@ getGundamTrad : async ()=> {
     const result = await client.query(queryString);
     
     const tradList= result.rows;
+    console.log(tradList);
     return tradList;
     
 }
+
 
 };
 module.exports = dataMapper;

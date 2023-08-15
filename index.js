@@ -1,10 +1,11 @@
 require('dotenv').config();
 
 const express = require('express');
+const path= require('path');
 
 // on importe le router
 const router = require('./app/router');
-const dataMapper = require('./app/dataMapper');
+
 
 // un peu de config
 const PORT = process.env.PORT || 5000;
