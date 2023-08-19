@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Mobile Suit|Barbatos| ガンダム・バルバトス</title>
+</head>
+
+<body>
+  <header>
+    <div class="lateral"></div>
+  </header>
+  <main>
+    <div class="title">
+      <h1>Mobile Suit</h1>
+    </div>
+    <div class="container">
+      <div class="barbatos">
+        <img src="./img/face.png" id="barbatos" alt="" />
+        <button class="view">view</button>
+
+      </div>
+
+      <div class="description">
+        <h2>ガンダム・バルバトス</h2>
+        <p class="french">
+          Le Gundam Barbatos est une Armure Mobile apparaissant dans la série
+          Mobile Suit Gundam: Iron-Blooded Orphans. Elle est pilotée par
+          Mikazuki Augus
+        </p>
+        <p>
+          <button>英語 - English</button>
+          <button>日本語 - Japanese</button>
+        </p>
+
+        <p id="english"><%= gundamEnglish[0].content %></p>
+
+        <p hidden>
+          <button>Français - French</button>
+          <button>日本語 - Japonais</button>
+        </p>
+        <p id="japanese"><%= gundamEnglish[1].content %></p>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

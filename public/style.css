@@ -29,6 +29,7 @@ header {
 }
 h1{
     background-color: whitesmoke;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 20% 0);
     max-width: fit-content;
 }
 h1::first-letter {
@@ -86,7 +87,7 @@ h2, p{
     margin: 6px 0px;
     padding: 10px;
 }
-p.french, p.english, p.japanese{
+p#french, p#english, p#japanese{
     border: solid 1px black;
 }
 

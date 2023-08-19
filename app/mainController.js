@@ -1,10 +1,11 @@
 const dataMapper = require('./dataMapper.js');
+
 const mainController = {
     HomePage: async (request, response, next) => {
         try {
-            const GundamTrad = await dataMapper.getGundamTrad();
+            const gundamEnglish = await dataMapper.getGundamTrad();
             
-            response.send(GundamTrad);
+            response.render('accueil',{gundamEnglish});
           
         } catch (error) {
             console.log(error)

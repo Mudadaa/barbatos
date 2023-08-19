@@ -1,12 +1,11 @@
 // document.addEventListener('DOMContentLoaded', function() {
-
-const { request } = require("express");
-const dataMapper = require("./app/dataMapper");
+  
 
   // Le code JavaScript lié au DOM va ici
 const app = {
-  front : "./public/img/face.png",
-  behind : "./public/img/dos.png",
+  
+  front : "./img/face.png",
+  behind : "./img/dos.png",
   currentImage : 'Hassan',
   // Sélectionner l'élément image
   init: function(){
@@ -14,8 +13,7 @@ const app = {
     app.view = document.querySelector(".view");
     app.view.addEventListener("click", app.barbaSwitch );
     app.barbatos.addEventListener("click", app.barbaSwitch);
-
-  },
+   },
   // Définir les chemins d'accès aux images
   
   // je mets en place une image par défaut
@@ -41,19 +39,23 @@ const app = {
   },
   
   
-  async getEnglishTrad(){
-  const englishTrad =document.querySelector(".english");
-  
-    try {
-      const gundamTrad= await dataMapper.getGundamTrad()[0];
-      englishTrad.textContent=gundamTrad
-      console.log(gundamTrad);
+  getEnglishTrad:async function(){
+  try {
+        const gundamTrad= await mainController.getGundamTrad();
+        app.englishTrad.textContent=gundamEnglish
+        console.log(gundamEnglish);
     } catch (error) {
       console.log("Erreur 404")
       response.status(404).send ("Une erreur est survenue")
     }
+   
+  },
+getJapaneseTrad:function(){
 
-  }
+}
+ 
+
+
 }
 document.addEventListener('DOMContentLoaded', app.init);
 
