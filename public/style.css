@@ -5,6 +5,7 @@
 }
 html{
     scroll-behavior: smooth;
+   
 }
 
 body {
@@ -27,11 +28,13 @@ header {
     background-color: firebrick;
     display: block;
 }
-h1{
+h1{ 
     background-color: whitesmoke;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 20% 0);
+    background-position-x: left;
+    clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
     max-width: fit-content;
 }
+
 h1::first-letter {
     font-size: 3rem;
     color: firebrick;
@@ -54,12 +57,14 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin: 6vw 3vw ;
     background-color: burlywood;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .barbatos{
     display : flex;
-    width: 50vw;
+    width: 45vw;
     flex-direction:row;
     justify-content:start;
     align-items: flex-start;
@@ -94,4 +99,9 @@ p#french, p#english, p#japanese{
 button{
     max-width: fit-content;
 }
-
+.gallery{
+    display: flex;
+}
+.gallery img{
+    width: 500px
+}
