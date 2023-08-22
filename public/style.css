@@ -31,7 +31,7 @@ header {
 h1{ 
     background-color: whitesmoke;
     background-position-x: left;
-    clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+    clip-path: polygon(-80% 0%, 80% 0%, 100% 100%, 20% 100%);
     max-width: fit-content;
 }
 
@@ -49,7 +49,6 @@ main {
     border: 3px solid red;
     display: flex;
     flex-direction: column;
-  
    width: 80vw;
 }
 
@@ -64,7 +63,7 @@ main {
 
 .barbatos{
     display : flex;
-    width: 45vw;
+    width: 40vw;
     flex-direction:row;
     justify-content:start;
     align-items: flex-start;
@@ -73,10 +72,16 @@ main {
 
 .description{
    display: block;
-
+   margin-right: 20vw;
     height: 60vh; 
-    width: 30vw;
+    width: 60vw;
     background-color: beige;
+}
+#english{
+    line-break:normal;
+}
+#japanese{
+    line-break:inherit;
 }
 h2{
 background-color: cornflowerblue;
