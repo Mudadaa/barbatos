@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -24,14 +25,27 @@ header {
     background-color: whitesmoke;
     border: 3px solid red;
 }
-.title{
-    background-color: firebrick;
-    display: block;
+.title{ 
+    display: block; 
+    animation:  slideColor 6s infinite cubic-bezier(0.47, 0, 0.75, 0.72); /* Smooth easing function */
+}
+
+@keyframes slideColor{
+        0%
+        {
+        transform: background(0, 0, 0);
+        background-image:linear-gradient(to right,rgb(255, 34, 34),firebrick) ;
+    }
+        100%
+        { 
+        transform: background(100, 0, 0);  
+        background-image:linear-gradient(to right, firebrick,rgb(255, 34, 34));
+    }
 }
 h1{ 
     background-color: whitesmoke;
     background-position-x: left;
-    clip-path: polygon(-80% 0%, 80% 0%, 100% 100%, 30% 100%);
+    clip-path: polygon(-80% 0%, 80% 0%, 100% 100%, 15% 100%);
     max-width: fit-content;
 }
 
@@ -55,7 +69,7 @@ main {
 .container{
     display: flex;
     flex-direction: row;
-   
+   margin-right: 4vw;
 
     background-color: burlywood;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -117,3 +131,13 @@ button{
 .gallery img{
     width: 500px
 }
+/* ------------------------MEDIA QUERIES------------------------
+https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
+
+
+/* smartphone */
+@media screen and (max-width: 780px){}
+/* tablette */
+@media screen and (min-width:780px) and (max-width: 990px){}
+/*desktop*/
+@media screen and (min-width: 1024px){}
