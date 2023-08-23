@@ -4,56 +4,30 @@
   // Le code JavaScript lié au DOM va ici
 const app = {
   
-  front : "./img/face.png",
-  behind : "./img/dos.png",
-  currentImage : 'Hassan',
-  // Sélectionner l'élément image
+  
+  // Sélectionner les éléments p de traduction
   init: function(){
-    app.barbatos = document.getElementById("barbatos");
-    app.view = document.querySelector(".view");
-    app.view.addEventListener("click", app.barbaSwitch );
-    app.barbatos.addEventListener("click", app.barbaSwitch);
+    app.english = document.querySelector(".english");
+    app.japanese = document.querySelector(".japanese");
+    app.english.addEventListener("click", app.getEnglish);
+    app.japanese.addEventListener("click", app.getJapanese);
+    app.englishP=document.getElementById("english");
+    app.japaneseP=document.getElementById("japanese");
    },
   // Définir les chemins d'accès aux images
   
   // je mets en place une image par défaut
   
   // je crée une fonction qui va changer l'image
-  barbaSwitch: function() {
-    
-  
-    if (app.currentImage === app.front || app.currentImage === 'Hassan') { // Utiliser la propriété "src" pour comparer les chemins d'accès aux images
-
-      app.currentImage = app.behind; 
-      app.barbatos.src = app.behind
-    
-
-      // Mettre à jour la source de l'image avec l'image de dos
-    } else if (app.currentImage === app.behind) {
-
-      app.barbatos.src = app.front// Mettre à jour la source de l'image avec l'image de face
-     app.currentImage = app.front
-
-
-    }
+  getJapanese :function(){
+app.japaneseP.removeAttribute("hidden");
+app.englishP.setAttribute("hidden","true");
   },
   
-  
-  getEnglishTrad:async function(){
-  try {
-        const gundamTrad= await mainController.getGundamTrad();
-        app.englishTrad.textContent=gundamEnglish
-        console.log(gundamEnglish);
-    } catch (error) {
-      console.log("Erreur 404")
-      response.status(404).send ("Une erreur est survenue")
-    }
-   
-  },
-getJapaneseTrad:function(){
-
-}
- 
+ getEnglish : function(){
+  app.englishP.removeAttribute("hidden");
+  app.japaneseP.setAttribute("hidden","true");
+ }
 
 
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-
+  <script src="./app.js"></script>
   <title>Mobile Suit|Barbatos| ガンダム・バルバトス</title>
 </head>
 
@@ -19,7 +19,7 @@
       <h1> Mobile Suit</h1>
     </div>
     <div class="container">
-      <div class="barbatos">
+      <div class="barbatosFace">
         <img src="./img/face.png" id="barbatos" alt="" />
         <button class="view">view</button>
 
@@ -35,19 +35,18 @@
           Mikazuki Augus</p>
         </p>
         <p>
-          <button>英語 - English</button>
-          <button>日本語 - Japanese</button>
+          <button class="english">英語 - English</button>
+          <button class="japanese">日本語 - Japanese</button>
         </p>
 
-        <p id="english"><%= gundamEnglish[0].content %></p>
+        <p id="english" hidden><%= gundamEnglish[0].content %></p>
 
-        <p hidden>
-          <button>Français - French</button>
-          <button>日本語 - Japonais</button>
-        </p>
-        <p id="japanese"><%= gundamEnglish[1].content %></p>
+
+        <p id="japanese" hidden><%= gundamEnglish[1].content %></p>
       </div>
-
+      <div class="barbatosDos">
+        <img src="./img/dos.png" alt="" />
+      </div>
     </div>
     <div class="gallery">
       <img src="./img/upperBody.jpg" id="upperBody" alt="">

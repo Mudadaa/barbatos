@@ -31,7 +31,7 @@ header {
 h1{ 
     background-color: whitesmoke;
     background-position-x: left;
-    clip-path: polygon(-80% 0%, 80% 0%, 100% 100%, 20% 100%);
+    clip-path: polygon(-80% 0%, 80% 0%, 100% 100%, 30% 100%);
     max-width: fit-content;
 }
 
@@ -55,15 +55,14 @@ main {
 .container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: 6vw 3vw ;
+   
+
     background-color: burlywood;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.barbatos{
+.barbatosFace{
     display : flex;
-    width: 40vw;
     flex-direction:row;
     justify-content:start;
     align-items: flex-start;
@@ -72,10 +71,17 @@ main {
 
 .description{
    display: block;
-   margin-right: 20vw;
     height: 60vh; 
     width: 60vw;
     background-color: beige;
+}
+.barbatosDos{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border: solid 1px black;
+    padding-bottom: 3rem;
 }
 #english{
     line-break:normal;
@@ -86,6 +92,7 @@ main {
 h2{
 background-color: cornflowerblue;
 max-width: fit-content;
+align-self:center ;
 }
 h2::sixth-letter {
     font-size: 3rem;
