@@ -21,8 +21,6 @@
     <div class="container">
       <div class="barbatosFace">
         <img src="./img/face.png" id="barbatos" alt="" />
-        <button class="view">view</button>
-
       </div>
 
       <div class="description">
@@ -34,15 +32,16 @@
         <p> Elle est pilotée par
           Mikazuki Augus</p>
         </p>
-        <p>
+        <p class="langButto">
           <button class="english">英語 - English</button>
           <button class="japanese">日本語 - Japanese</button>
         </p>
+        <div class="paveTrad">
+          <p id="english" hidden><%= gundamEnglish[0].content %></p>
 
-        <p id="english" hidden><%= gundamEnglish[0].content %></p>
 
-
-        <p id="japanese" hidden><%= gundamEnglish[1].content %></p>
+          <p id="japanese" hidden><%= gundamEnglish[1].content %></p>
+        </div>
       </div>
       <div class="barbatosDos">
         <img src="./img/dos.png" alt="" />

@@ -113,11 +113,51 @@ main {
     border: solid 1px black;
     padding-bottom: 3rem;
 }
+/* les boutons */
+.langButto{
+    display: flex;
+    justify-content:center;
+    
+}
+.english{
+    
+    margin-right: 4rem;
+    padding: 1rem;
+    border-radius:0.5rem;
+    background-image:linear-gradient(to right,rgb(87, 111, 249),rgb(201, 167, 167)) ;
+}
+.japanese{
+   
+    padding: 1rem;
+    border-radius:0.5rem;
+    background-image:linear-gradient(to right,rgb(201, 167, 167),rgb(87, 111, 249)) ;
+}
+.japanese:hover{
+    border-radius:0rem;
+    transform: scale(1.2);
+    transition:all 0.2s ease-in-out;
+    background-image:linear-gradient(to right,#736A6A,#C7B46B);
+
+}
+.english:hover{
+    border-radius:0rem;
+    transform: scale(1.2);
+    transition:all 0.2s ease-in-out;
+    background-image:linear-gradient(to right,#B23940,#736A6A);
+
+}
 #english{
     line-break:normal;
 }
 #japanese{
-    line-break:inherit;
+    line-break:auto;
+}
+.paveTrad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    background: radial-gradient(circle, rgb(197, 235, 187) 0%, rgb(87, 111, 249) 100%); 
 }
 h2{
 background-color: cornflowerblue;
