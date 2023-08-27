@@ -90,6 +90,12 @@ main {
     background-color: burlywood;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#hover-barbatos {
+    opacity: 0;
+    }
+#barbatos, #hover-barbatos {
+transition:opacity 0.3s ease-in-out;
+}
 
 .barbatosFace{
     display : flex;
@@ -97,8 +103,14 @@ main {
     justify-content:start;
     align-items: flex-start;
     border: solid 1px black;
+    overflow: hidden;
 }
-
+.barbatosFace:hover #barbatos{
+    opacity: 0;
+}
+.barbatosFace:hover #hover-barbatos{
+    opacity: 1;
+}
 .description{
    display: block;
     height: 60vh; 
@@ -156,7 +168,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    
     background: radial-gradient(circle, rgb(197, 235, 187) 0%, rgb(87, 111, 249) 100%); 
 }
 h2{
