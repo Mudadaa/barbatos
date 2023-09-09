@@ -27,7 +27,7 @@ app.englishP.setAttribute("hidden","true");
  getEnglish : function(){
   app.englishP.removeAttribute("hidden");
   app.japaneseP.setAttribute("hidden","true");
- }
+ },
 
 
 }

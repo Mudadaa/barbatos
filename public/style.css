@@ -1,4 +1,17 @@
-
+/* @property --gradient-angle {
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+} */
+:root{
+    --clr-1:#b22222;
+    --clr-2:#60df2e;
+    --clr-3:#e91010;
+}
+@keyframes rotation{
+    0% {--gradient-angle: 0deg;}
+    100%{--gradient-angle:360deg;}
+ }
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +25,7 @@ html{
 body {
     display: flex;
     flex-direction: row;
-   
+   overflow-x: hidden;
     overflow-y: scroll;
 }
 header {
@@ -23,36 +36,31 @@ header {
     height: 100vh;
     width: 20vw;
     background-color: whitesmoke;
-    border: 3px solid red;
+   
 }
 .title{ 
     display: block; 
-    animation:  slideColor 6s infinite cubic-bezier(0.47, 0, 0.75, 0.72); /* Smooth easing function */
+     border-radius: 0.5rem;
+     background-color: var(--clr-3);
+     position: relative;
+}
+.title::before,
+.title::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(
+        var(--gradient-angle),
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-3)
+    );
+    animation: rotation 20s linear infinite;
+}
+.title::after {
+    filter:blur(3rem);
 }
 
-@keyframes slideColor{
-        0%
-        {
-         background-color(0, 0, 0);
-        background-image:linear-gradient(to right,rgb(255, 34, 34),firebrick) ;
-    }
-    
-        65%
-        { 
-        background-color(65, 0, 0);  
-        background-image:linear-gradient(to right, firebrick,rgb(255, 34, 34));
-    }
-    /* En ajoutant l'étape à 95%, la transition entre le 80% et le 100% se fera de manière plus progressive,
-     ce qui  donne un effet de transition plus lisse entre les extrémités de la boucle. */
-    80%, 95% {
-        background-color: rgb(100, 0, 0);
-        background-image: linear-gradient(to right, rgb(255, 34, 34), firebrick);
-    }
-    100% {
-        background-color: rgb(0, 0, 0);
-        background-image: linear-gradient(to right, rgb(255, 34, 34), firebrick);
-    }
-}
 
 
 
@@ -67,7 +75,7 @@ h1{
 
 h1::first-letter {
     font-size: 3rem;
-    color: firebrick;
+    color: #b22222;
     background-color: whitesmoke;
 }
 
@@ -76,7 +84,7 @@ h1::first-letter {
     padding: 10px;
 }
 main {
-    border: 3px solid red;
+    border: 3px solid rgb(233, 16, 16);
     display: flex;
     flex-direction: column;
    width: 80vw;
@@ -90,8 +98,15 @@ main {
     background-color: burlywood;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#barbatos{
+    position:relative;
+   
+   
+}
 #hover-barbatos {
+    position: absolute;
     opacity: 0;
+   
     }
 #barbatos, #hover-barbatos {
 transition:opacity 0.3s ease-in-out;
@@ -104,6 +119,7 @@ transition:opacity 0.3s ease-in-out;
     align-items: flex-start;
     border: solid 1px black;
     overflow: hidden;
+    padding-right: 200px;
 }
 .barbatosFace:hover #barbatos{
     opacity: 0;
@@ -195,6 +211,8 @@ button{
 }
 .gallery{
     display: flex;
+    width: inherit;
+    flex-wrap: wrap;
 }
 .gallery img{
     width: 500px
