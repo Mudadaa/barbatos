@@ -28,6 +28,7 @@ body {
    overflow-x: hidden;
     overflow-y: scroll;
 }
+/* ---------------------------HEADER--------------------------------- */
 header {
     display: flex;
     flex-direction: column;
@@ -38,6 +39,15 @@ header {
     background-color: whitesmoke;
    
 }
+/* 
+---------------------------------MAIN------------------------------------ */
+main {
+    border: 3px solid rgb(233, 16, 16);
+    display: flex;
+    flex-direction: column;
+   width: 80vw;
+}
+
 .title{ 
     display: block; 
      border-radius: 0.5rem;
@@ -61,11 +71,6 @@ header {
     filter:blur(3rem);
 }
 
-
-
-
-
-
 h1{ 
     background-color: whitesmoke;
     background-position-x: left;
@@ -83,17 +88,11 @@ h1::first-letter {
     margin: 10px 0;
     padding: 10px;
 }
-main {
-    border: 3px solid rgb(233, 16, 16);
-    display: flex;
-    flex-direction: column;
-   width: 80vw;
-}
+
 
 .container{
     display: flex;
     flex-direction: row;
-   margin-right: 4vw;
 
     background-color: burlywood;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -210,13 +209,17 @@ button{
     max-width: fit-content;
 }
 .gallery{
-    display: flex;
+    display: grid;
     width: inherit;
-    flex-wrap: wrap;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:1px #60df2e dotted;
 }
 .gallery img{
-    width: 500px
+    width: 400px;
+    border-radius:6px ;
 }
+
 /* ------------------------MEDIA QUERIES------------------------
 https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
 
