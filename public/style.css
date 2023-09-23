@@ -23,10 +23,13 @@ html{
 }
 
 body {
+    min-height: 100vh;
+    min-width: 100vw ;
     display: flex;
     flex-direction: row;
-   overflow-x: hidden;
+    overflow-x: hidden;
     overflow-y: scroll;
+    background-color: black;
 }
 /* ---------------------------HEADER--------------------------------- */
 header {
@@ -36,9 +39,11 @@ header {
     align-items: start;
     height: 100vh;
     width: 20vw;
-    background-color: whitesmoke;
+    
    
 }
+
+
 /* 
 ---------------------------------MAIN------------------------------------ */
 main {
@@ -205,20 +210,40 @@ p#french, p#english, p#japanese{
     border: solid 1px black;
 }
 
+.massue:hover{
+    display: block;
+}
+
 button{
     max-width: fit-content;
 }
 .gallery{
     display: grid;
-    width: inherit;
-    gap: 1rem;
     grid-template-columns: 1fr 1fr 1fr;
-    border:1px #60df2e dotted;
+    border:8px #60df2e dotted;
 }
-.gallery img{
-    width: 400px;
-    border-radius:6px ;
+ #vignet{
+   border:6px orange solid;
+   overflow: hidden;
+   position: relative;
 }
+
+ #vignet img {
+    height: 100%;
+    width:100%;
+    
+}
+#vignet video{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+
+
 
 /* ------------------------MEDIA QUERIES------------------------
 https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */

@@ -3,9 +3,6 @@
 
   // Le code JavaScript lié au DOM va ici
 const app = {
-  
-  
- 
   init: function(){
      // Sélection des éléments p de traduction
     app.english = document.querySelector(".english");
@@ -18,15 +15,16 @@ const app = {
    app.upper=document.getElementById("upperBody");
    app.lupus=document.getElementById("lupus");
    app.weapon=document.getElementById("weapon");
-   //hover events
-   app.upper.addEventListener("mouseover",app.getLupus);
-   app.lupus.addEventListener("mouseover", app.getWeapon);
+   //img hover events
+  //  app.upper.addEventListener("mouseover",app.getLupus);
+
+   //selection des div vignet
+   app.vMassue=document.querySelector(".vignet-massue");
+   //selection video hover events
+   app.massue=document.querySelector(".massue");
+    app.vMassue.addEventListener("mouseover",app.getWeapon);
    },
-  // Définir les chemins d'accès aux images
-  
-  // je mets en place une image par défaut
-  
-  // je crée une fonction qui va changer l'image
+
   getJapanese :function(){
 app.japaneseP.removeAttribute("hidden");
 app.englishP.setAttribute("hidden","true");
@@ -37,14 +35,25 @@ app.englishP.setAttribute("hidden","true");
   app.japaneseP.setAttribute("hidden","true");
  },
 getLupus: function(){
-  console.log("hola los lupus de la venga")
+
+  console.log("hola los FACE de la venga")
   app.lupus.removeAttribute("hidden")
   
 },
 getWeapon: function(){
-  app.weapon.removeAttribute("hidden")
+  app.weapon.addEventListener("mouseenter", ()=>{
+    app.weapon.style.display="none"
+    app.massue.style.display="block"
+    app.massue.play()
+  });
+   
+  app.weapon.addEventListener("mouseleave", ()=>{
+    app.massue.style.display="none";
+    app.weapon.style.display="block";
+    app.massue.pause();
+   
+  });
 }
-
-}
+};
 document.addEventListener('DOMContentLoaded', app.init);
 

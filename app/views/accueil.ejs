@@ -6,13 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <script src="./app.js"></script>
+  <link rel="shortcut icon" id="favicon" href="./img/Tekkadan_logo.webp" type="image/x-icon">
+
   <title>Mobile Suit|Barbatos| ガンダム・バルバトス</title>
 </head>
 
 <body>
   <header>
-    <div class="lateral"></div>
+    <div class="lateral">
+    </div>
   </header>
   <main>
     <div class="title">
@@ -49,12 +51,25 @@
       </div>
     </div>
     <div class="gallery">
-      <img src="./img/upperBody.jpg" id="upperBody" alt="">
-      <img src="./img/lupusRexMode1.jpg" id="lupus" hidden alt="">
-      <img src="./img/upperbodyWeapon1.jpg" id="weapon" hidden alt="">
+      <div id="vignet" class="vignet-face">
+        <img src="./img/upperBody.jpg" id="upperBody" alt="">
+
+      </div>
+      <div id="vignet" class="vignet-lupus">
+        <img src="./img/lupusRexMode1.jpg" id="lupus" alt="">
+      </div>
+
+
+      <div id="vignet" class="vignet-massue">
+        <img src="./img/upperbodyWeapon1.jpg" id="weapon" alt="">
+        <video class="massue" autoplay="autoplay" loop>
+          <source src="./videos/massue.webm" type="video/webm">
+        </video>
+      </div>
     </div>
   </main>
   <footer></footer>
+  <script src="./app.js"></script>
 </body>
 
 </html>
