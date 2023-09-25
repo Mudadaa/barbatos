@@ -4,6 +4,15 @@
   // Le code JavaScript lié au DOM va ici
 const app = {
   init: function(){
+    //Sélection des images de face et de dos pr le buttonToggle
+   app.face=document.getElementById("barbatos");
+   app.dos=document.getElementById("barbatosDos");
+   app.button=document.querySelector(".togglButton");
+   app.button.addEventListener("click",app.toggleView);
+//Hover sur les images de face et de dos
+    app.divFace=document.querySelector(".barbatosFace");
+    app.faceHover=document.getElementById("hover-barbatos");
+    app.divFace.addEventListener("mouseover",app.getFaceHover);
      // Sélection des éléments p de traduction
     app.english = document.querySelector(".english");
     app.japanese = document.querySelector(".japanese");
@@ -22,9 +31,31 @@ const app = {
    app.vMassue=document.querySelector(".vignet-massue");
    //selection video hover events
    app.massue=document.querySelector(".massue");
-    app.vMassue.addEventListener("mouseover",app.getWeapon);
+  app.vMassue.addEventListener("mouseover",app.getWeapon);
    },
-
+   toggleView :function(){
+    console.log("ça toggle ouuuuu ?")
+    if (app.dos.hasAttribute("hidden")){
+     app.face.setAttribute("hidden", "true");
+     app.dos.removeAttribute("hidden");
+   }else{
+     app.dos.setAttribute("hidden", "true");
+     app.face.removeAttribute("hidden");
+   }
+  },
+  getFaceHover :function(){
+    console.log("ça hoverface ouuuu ?");
+    if(app.face){
+    app.face.style.opacity=0;
+    app.divFace=app.faceHover;
+    app.divFace.style.opacity=1;
+    app.faceHover.style.opacity=1;
+  }else{
+    app.face.style.opacity=1;
+   
+  }
+    
+},
   getJapanese :function(){
 app.japaneseP.removeAttribute("hidden");
 app.englishP.setAttribute("hidden","true");

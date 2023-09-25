@@ -102,6 +102,11 @@ h1::first-letter {
     background-color: burlywood;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.viewChange{
+    display: inline;
+
+   
+}
 #barbatos{
     position:relative;
    
@@ -109,7 +114,7 @@ h1::first-letter {
 }
 #hover-barbatos {
     position: absolute;
-    opacity: 0;
+   opacity: 0;
    
     }
 #barbatos, #hover-barbatos {
@@ -117,6 +122,7 @@ transition:opacity 0.3s ease-in-out;
 }
 
 .barbatosFace{
+    position: relative;
     display : flex;
     flex-direction:row;
     justify-content:start;
@@ -124,13 +130,14 @@ transition:opacity 0.3s ease-in-out;
     border: solid 1px black;
     overflow: hidden;
     padding-right: 200px;
+    overflow-x: hidden;
 }
-.barbatosFace:hover #barbatos{
+ /* #barbatos :hover{
     opacity: 0;
 }
 .barbatosFace:hover #hover-barbatos{
     opacity: 1;
-}
+} */
 .description{
    display: block;
     height: 60vh; 
@@ -196,11 +203,6 @@ background-color: cornflowerblue;
 max-width: fit-content;
 align-self:center ;
 }
-h2::sixth-letter {
-    font-size: 3rem;
-    color: whitesmoke;
-    background-color: firebrick;
-}
 
 h2, p{
     margin: 6px 0px;
@@ -249,9 +251,9 @@ button{
 https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
 
 
-/* smartphone */
+/* smartphone
 @media screen and (max-width: 780px){}
 /* tablette */
-@media screen and (min-width:780px) and (max-width: 990px){}
+/* @media screen and (min-width:780px) and (max-width: 990px){} */
 /*desktop*/
-@media screen and (min-width: 1024px){}
+/*@media screen and (min-width: 1024px){} */
