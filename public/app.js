@@ -4,15 +4,20 @@
   // Le code JavaScript lié au DOM va ici
 const app = {
   init: function(){
+
     //Sélection des images de face et de dos pr le buttonToggle
    app.face=document.getElementById("barbatos");
    app.dos=document.getElementById("barbatosDos");
    app.button=document.querySelector(".togglButton");
    app.button.addEventListener("click",app.toggleView);
+
+
 //Hover sur les images de face et de dos
     app.divFace=document.querySelector(".barbatosFace");
     app.faceHover=document.getElementById("hover-barbatos");
-    app.divFace.addEventListener("mouseover",app.getFaceHover);
+    app.divFace.addEventListener("mouseover");
+
+
      // Sélection des éléments p de traduction
     app.english = document.querySelector(".english");
     app.japanese = document.querySelector(".japanese");
@@ -20,18 +25,30 @@ const app = {
     app.japanese.addEventListener("click", app.getJapanese);
     app.englishP=document.getElementById("english");
     app.japaneseP=document.getElementById("japanese");
+
+
 //Sélection des img de galerie
    app.upper=document.getElementById("upperBody");
    app.lupus=document.getElementById("lupus");
    app.weapon=document.getElementById("weapon");
-   //img hover events
-  //  app.upper.addEventListener("mouseover",app.getLupus);
+
+
+  
 
    //selection des div vignet
    app.vMassue=document.querySelector(".vignet-massue");
-   //selection video hover events
+   app.vDessous=document.querySelector(".vignet-dessous");
+
+
+   //selection des div video 
    app.massue=document.querySelector(".massue");
-  app.vMassue.addEventListener("mouseover",app.getWeapon);
+   app.dessous=document.querySelector(".dessous");
+
+
+   //ajout d'events hover 
+  app.vMassue.addEventListener("mouseenter",app.getWeapon);
+  app.vDessous.addEventListener("click",app.getBarbatos);
+  
    },
    toggleView :function(){
     console.log("ça toggle ouuuuu ?")
@@ -43,19 +60,19 @@ const app = {
      app.face.removeAttribute("hidden");
    }
   },
-  getFaceHover :function(){
-    console.log("ça hoverface ouuuu ?");
-    if(app.face){
-    app.face.style.opacity=0;
-    app.divFace=app.faceHover;
-    app.divFace.style.opacity=1;
-    app.faceHover.style.opacity=1;
-  }else{
-    app.face.style.opacity=1;
-   
-  }
+  // getHover :function(){
     
-},
+  //   if(app.faceHover.style.display="none"){
+  //   app.faceHover.style.display="block";
+  //    app.face.style.display="none";
+  // }else{
+  //   app.face.style.opacity=1;
+   
+  //  },
+
+
+    
+
   getJapanese :function(){
 app.japaneseP.removeAttribute("hidden");
 app.englishP.setAttribute("hidden","true");
@@ -65,16 +82,11 @@ app.englishP.setAttribute("hidden","true");
   app.englishP.removeAttribute("hidden");
   app.japaneseP.setAttribute("hidden","true");
  },
-getLupus: function(){
 
-  console.log("hola los FACE de la venga")
-  app.lupus.removeAttribute("hidden")
-  
-},
 getWeapon: function(){
   app.weapon.addEventListener("mouseenter", ()=>{
     app.weapon.style.display="none"
-    app.massue.style.display="block"
+    app.massue
     app.massue.play()
   });
    
@@ -84,7 +96,14 @@ getWeapon: function(){
     app.massue.pause();
    
   });
-}
+
+},
+getBarbatos: function(){
+  app.upper.setAttribute("hidden","true");
+  app.dessous.display="block";
+  app.dessous.play();
+  console.log("ça démarre ouuuu?")
+},
 };
 document.addEventListener('DOMContentLoaded', app.init);
 

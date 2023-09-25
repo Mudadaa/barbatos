@@ -104,21 +104,20 @@ h1::first-letter {
 }
 .viewChange{
     display: inline;
-
-   
 }
-#barbatos{
+.barbatosFace{
     position:relative;
-   
-   
 }
-#hover-barbatos {
-    position: absolute;
-   opacity: 0;
-   
-    }
+.togglButton{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding:0.5rem;
+    font-size: 16px;
+    color: aliceblue;
+    background-color: var(--clr-1);
+    border-radius: 3px 5px;
+}
 #barbatos, #hover-barbatos {
-transition:opacity 0.3s ease-in-out;
+transition: 0.3s ease-in-out;
 }
 
 .barbatosFace{
@@ -130,14 +129,18 @@ transition:opacity 0.3s ease-in-out;
     border: solid 1px black;
     overflow: hidden;
     padding-right: 200px;
-    overflow-x: hidden;
+  
 }
- /* #barbatos :hover{
+ #barbatos :hover{
     opacity: 0;
 }
 .barbatosFace:hover #hover-barbatos{
     opacity: 1;
-} */
+}
+#quatrieme{
+    display: flex;
+    flex-direction: row;
+}
 .description{
    display: block;
     height: 60vh; 
@@ -149,7 +152,6 @@ transition:opacity 0.3s ease-in-out;
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
-    border: solid 1px black;
     padding-bottom: 3rem;
 }
 /* les boutons */
