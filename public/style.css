@@ -8,10 +8,7 @@ inherits: false;
     --clr-2:#60df2e;
     --clr-3:#e91010;
 }
-@keyframes rotation{
-    0% {--gradient-angle: 0deg;}
-    100%{--gradient-angle:360deg;}
- }
+
 * {
     margin: 0;
     padding: 0;
@@ -19,235 +16,61 @@ inherits: false;
 }
 html{
     scroll-behavior: smooth;
-   
+   margin: 0;
+   padding: 0;
+   height: 100vh;
+   overflow-y: hidden;
+   overflow-x: hidden;
 }
-
+/* ---------------------BODY------------------------ */
 body {
     min-height: 100vh;
     min-width: 100vw ;
-    display: flex;
-    flex-direction: row;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background-color: black;
-}
-/* ---------------------------HEADER--------------------------------- */
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: start;
-    height: 100vh;
-    width: 20vw;
-    
-   
-}
-
-
-/* 
----------------------------------MAIN------------------------------------ */
-main {
-    border: 3px solid rgb(233, 16, 16);
-    display: flex;
-    flex-direction: column;
-   width: 80vw;
-}
-
-.title{ 
-    display: block; 
-     border-radius: 0.5rem;
-     background-color: var(--clr-3);
-     position: relative;
-}
-.title::before,
-.title::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: conic-gradient(
-        var(--gradient-angle),
-        var(--clr-1),
-        var(--clr-2),
-        var(--clr-3)
-    );
-    animation: rotation 20s linear infinite;
-}
-.title::after {
-    filter:blur(3rem);
-}
-
-h1{ 
-    background-color: whitesmoke;
-    background-position-x: left;
-    clip-path: polygon(-80% 0%, 80% 0%, 100% 100%, 15% 100%);
-    max-width: fit-content;
-}
-
-h1::first-letter {
-    font-size: 3rem;
-    color: #b22222;
-    background-color: whitesmoke;
-}
-
-.title, h1{
-    margin: 10px 0;
-    padding: 10px;
-}
-
-
-.container{
-    display: flex;
-    flex-direction: row;
-
-    background-color: burlywood;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.viewChange{
-    display: inline;
-}
-.barbatosFace{
-    position:relative;
-}
-.togglButton{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding:0.5rem;
-    font-size: 16px;
-    color: aliceblue;
-    background-color: var(--clr-1);
-    border-radius: 3px 5px;
-}
-#barbatos, #hover-barbatos {
-transition: 0.3s ease-in-out;
-}
-
-.barbatosFace{
-    position: relative;
-    display : flex;
-    flex-direction:row;
-    justify-content:start;
-    align-items: flex-start;
-    border: solid 1px black;
-    overflow: hidden;
-    padding-right: 200px;
-  
-}
- #barbatos :hover{
-    opacity: 0;
-}
-.barbatosFace:hover #hover-barbatos{
-    opacity: 1;
-}
-#quatrieme{
-    display: flex;
-    flex-direction: row;
-}
-.description{
-   display: block;
-    height: 60vh; 
-    width: 60vw;
-    background-color: beige;
-}
-.barbatosDos{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding-bottom: 3rem;
-}
-/* les boutons */
-.langButto{
-    display: flex;
-    justify-content:center;
-    
-}
-.english{
-    
-    margin-right: 4rem;
-    padding: 1rem;
-    border-radius:0.5rem;
-    background-image:linear-gradient(to right,rgb(87, 111, 249),rgb(201, 167, 167)) ;
-}
-.japanese{
-   
-    padding: 1rem;
-    border-radius:0.5rem;
-    background-image:linear-gradient(to right,rgb(201, 167, 167),rgb(87, 111, 249)) ;
-}
-.japanese:hover{
-    border-radius:0rem;
-    transform: scale(1.2);
-    transition:all 0.2s ease-in-out;
-    background-image:linear-gradient(to right,#736A6A,#C7B46B);
-
-}
-.english:hover{
-    border-radius:0rem;
-    transform: scale(1.2);
-    transition:all 0.2s ease-in-out;
-    background-image:linear-gradient(to right,#B23940,#736A6A);
-
-}
-#english{
-    line-break:normal;
-}
-#japanese{
-    line-break:auto;
-}
-.paveTrad{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    background: radial-gradient(circle, rgb(197, 235, 187) 0%, rgb(87, 111, 249) 100%); 
-}
-h2{
-background-color: cornflowerblue;
-max-width: fit-content;
-align-self:center ;
-}
-
-h2, p{
-    margin: 6px 0px;
-    padding: 10px;
-}
-p#french, p#english, p#japanese{
-    border: solid 1px black;
-}
-
-.massue:hover{
-    display: block;
-}
-
-button{
-    max-width: fit-content;
-}
-.gallery{
+    background-image:url(img/cockpit.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border:8px #60df2e dotted;
+    grid-template-columns: 32% 36% 32%;
 }
- #vignet{
-   border:6px orange solid;
-   overflow: hidden;
-   position: relative;
-}
-
- #vignet img {
+/* -----------------------------PARTIE GAUCHE----------------------------------------------- */
+.laterale-gauche{
+    border: black solid 2px;
     height: 100%;
-    width:100%;
-    
-}
-#vignet video{
-    position: absolute;
-    display: none;
-    top: 0;
-    left: 0;
     width: 100%;
+}
+/* ----------------------------écranGauche----------------------------------------------- */
+.ecran-gauche{
+    background-color:aqua ;
+    height: 40%;
+   
+    margin-top: 65%;
+    margin-left: 10%; 
+    transform: matrix(0.87, -0.5, 0, 0.87, 0, 1);
+}
+
+/*----------------------------PARTIE DROITE----------------------------------------------- */
+
+.laterale-droite{
+    
+    border: black solid 2px;
     height: 100%;
-    object-fit: cover;
-} 
+    width: 100%;
+}
 
+/*----------------------------écranDroite----------------------------------------------- */
+.ecran-droit{
+    background-color: aquamarine;
+    height: 40%;
+    margin-top: 65%;
+    transform: perspective(500px) translateZ(-10rem);
+}
+/*----------------------------MILIEU----------------------------------------------- */
 
+.milieu{
+    border: black solid 2px;
+    height: 100%;
+    width: 100%;
+}
 
 /* ------------------------MEDIA QUERIES------------------------
 https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
@@ -259,3 +82,11 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
 /* @media screen and (min-width:780px) and (max-width: 990px){} */
 /*desktop*/
 /*@media screen and (min-width: 1024px){} */
+
+
+#preloader{
+    height: 100vh;
+    width:  100vw;
+    z-index: 100;
+   
+}

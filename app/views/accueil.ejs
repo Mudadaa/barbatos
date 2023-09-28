@@ -12,73 +12,25 @@
 </head>
 
 <body>
-  <header>
-    <div class="lateral">
-    </div>
-  </header>
-  <main>
-    <div class="title">
-      <h1> Mobile Suit</h1>
-    </div>
-    <button class="togglButton">Vue</button>
-    <div class="container">
-
-      <div class="barbatosFace">
-        <img src="./img/face.png" id="barbatos" alt="" />
-
-        <!-- <img src="./img/faceScanner.png" id="hover-barbatos" alt="">
-        <img src="./img/jeuxArco.png" id="quatrieme" alt=""> -->
-        <img src="./img/dos.png" hidden id="barbatosDos" alt="" />
-
-      </div>
-
-      <div class="description">
-        <h2>ガンダム・バルバトス</h2>
-        <p class="french">
-          Le Gundam Barbatos est une Armure Mobile apparaissant dans la série
-        <p>
-          Mobile Suit Gundam: Iron-Blooded Orphans.</p>
-        <p> Elle est pilotée par
-          Mikazuki Augus</p>
-        </p>
-        <p class="langButto">
-          <button class="english">英語 - English</button>
-          <button class="japanese">日本語 - Japanese</button>
-        </p>
-        <div class="paveTrad">
-          <p id="english" hidden><%= gundamEnglish[0].content %></p>
+  <video id="preloader" preload="auto" autoplay canplaythrough>
+    <source src="videos/PreloaderChargement.mp4" type="video/mp4">
+  </video>
+  <div class="laterale-gauche">
+    <div class="ecran-gauche"></div>
+  </div>
 
 
-          <p id="japanese" hidden><%= gundamEnglish[1].content %></p>
-        </div>
-      </div>
-
-    </div>
+  <div class="milieu"></div>
 
 
-    <div class="gallery">
-      <div id="vignet" class="vignet-face">
-        <video class="dessous" autoplay="autoplay" loop>
-          <source src="./videos/vueDessous.webm" type="video/webm">
-          <img src="./img/upperBody.jpg" id="upperBody" alt="">
-
-      </div>
-
-      <div id="vignet" class="vignet-lupus">
-        <img src="./img/lupusRexMode1.jpg" id="lupus" alt="">
-      </div>
+  <div class="laterale-droite">
+    <div class="ecran-droit"></div>
+  </div>
 
 
-      <div id="vignet" class="vignet-massue">
-        <img src="./img/upperbodyWeapon1.jpg" id="weapon" alt="">
-        <video class="massue" autoplay="autoplay" loop>
-          <source src="./videos/massue.webm" type="video/webm">
-        </video>
-      </div>
-    </div>
-  </main>
-  <footer></footer>
-  <script src="./app.js"></script>
+
+
+
 </body>
 
 </html>
