@@ -12,13 +12,13 @@
 </head>
 
 <body>
-  <video id="preloader" preload="auto" autoplay canplaythrough>
+  <video preload="auto" autoplay id="preloader">
     <source src="videos/PreloaderChargement.mp4" type="video/mp4">
   </video>
+
   <div class="laterale-gauche">
     <div class="ecran-gauche"></div>
   </div>
-
 
   <div class="milieu"></div>
 
@@ -26,11 +26,15 @@
   <div class="laterale-droite">
     <div class="ecran-droit"></div>
   </div>
+  <script>
+    var preloader = document.getElementById("preloader");
 
-
-
-
-
+    function timeOut() {
+      preloader.style.display = "none";
+    }
+    setTimeout(timeOut, 5100);
+  </script>
 </body>
+
 
 </html>

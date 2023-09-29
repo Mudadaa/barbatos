@@ -105,5 +105,6 @@ getBarbatos: function(){
   console.log("ça démarre ouuuu?")
 },
 };
+
 document.addEventListener('DOMContentLoaded', app.init);
 
