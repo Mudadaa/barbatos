@@ -23,12 +23,18 @@ html{
    overflow-x: hidden;
 }
 /* ---------------------BODY------------------------ */
-body {
+body{
     min-height: 100vh;
     min-width: 100vw ;
     background-image:url(img/cockpit.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+/* ---------------------CONTAINER------------------------ */
+
+.container {
+    min-height: 100vh;
+    min-width: 100vw ;
     display: grid;
     grid-template-columns: 32% 36% 32%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -66,7 +72,6 @@ body {
 
 /*----------------------------écranDroite----------------------------------------------- */
 .ecran-droit{
-   
     background-color: #b22222;
     width:100% ;
     height: 40%;
@@ -74,27 +79,32 @@ body {
     /* transform: matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1);
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
-    transform: matrix3d(1.2, 0.1, 1.5, 0, -.02, 1.1, 0, 0, 0, 0, 1, 0, -50, -10, 0, 1);
+    transform: matrix3d(1.2, 0.1, 1.5, 0, -.01, 1.1, 0, 0, 0, 0, 1, 0, -50, 30, 0, 1);
 
 }
-
+#faceB
+,#dosB{
+    width:150px ;
+    height:250px ;
+}
+.barbatos{
+    width: fit-content;
+    height: fit-content;
+}
 /*----------------------------MILIEU----------------------------------------------- */
 
 .milieu{
+    grid-area: milieu;
     border: black solid 2px;
     height: 100%;
     width: 100%;
 }
-
-/* 
-------------------------VIDEO PRELOAD---------------------------------------------------------- */
-#preloader{
-    height: 100vh;
-    width:  100vw;
-    object-fit: fill;
-    z-index: 100;
-   
+.ecran-milieu{
+    width:100% ;
+    height: 30%;
+    background-color: #60df2e;
 }
+
 
 /* ------------------------MEDIA QUERIES------------------------
 https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
@@ -157,4 +167,15 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
 }
 .milieu{
     grid-area: milieu;
+}
+
+
+/* 
+------------------------VIDEO PRELOAD---------------------------------------------------------- */
+ #preloader{
+    z-index: 100;
+    height: 100vh;
+    width:  100vw;
+    object-fit: fill;
+    
 }

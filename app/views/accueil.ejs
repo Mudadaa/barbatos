@@ -6,34 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" id="favicon" href="./img/Tekkadan_logo.webp" type="image/x-icon">
+  <link rel="shortcut icon" id="favicon" href="/img/Tekkadan_logo.webp" type="image/x-icon">
 
   <title>Mobile Suit|Barbatos| ガンダム・バルバトス</title>
 </head>
 
 <body>
-  <!-- <video preload="auto" autoplay id="preloader">
-    <source src="videos/PreloaderChargement.mp4" type="video/mp4">
-  </video> -->
+  <video preload="auto" autoplay id="preloader">
+    <source src="videos/preload.webm" type="video/webm">
+  </video>
 
-  <div class="laterale-gauche">
-    <div class="ecran-gauche"></div>
+  <div class="container">
+
+    <div class="laterale-gauche">
+      <div class="ecran-gauche"></div>
+    </div>
+
+    <div class="milieu">
+      <div class="ecran-milieu">
+      </div>
+      <div class="barbatos">
+        <div class="normalBarbatos">
+          <img id="faceB" src="img/face.png" alt="">
+          <img id="dosB" src="img/dos.png" hidden alt="">
+        </div>
+        <button class="toggleButton"> Vue</button>
+      </div>
+    </div>
+    <div class="laterale-droite">
+      <div class="ecran-droit"></div>
+    </div>
+
   </div>
 
-  <div class="milieu">
-    <div class="ecran-milieu"></div>
-  </div>
 
-  <div class="laterale-droite">
-    <div class="ecran-droit"></div>
-  </div>
   <script>
-    var preloader = document.getElementById(" preloader");
+    var preloader = document.getElementById("preloader");
 
     function timeOut() {
       preloader.style.display = "none";
     }
-    setTimeout(timeOut, 5100);
+    setTimeout(timeOut, 5200);
   </script>
 </body>
 
