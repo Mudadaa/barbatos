@@ -17,29 +17,33 @@
   </video>
 
   <div class="container">
-
+    <!-- --------------------------LATERAL GAUCHE------------------------------------ -->
     <div class="laterale-gauche">
+      <div class="hautG"></div>
       <div class="ecran-gauche"></div>
+      <div class="basG"></div>
     </div>
-
-    <div class="milieu">
+    <!-- ---------------------------MILIEU------------------------------------- -->
+    <div class="centre">
+      <div class="haut-milieu"></div>
       <div class="ecran-milieu">
-      </div>
-      <div class="barbatos">
         <div class="normalBarbatos">
           <img id="faceB" src="img/face.png" alt="">
           <img id="dosB" src="img/dos.png" hidden alt="">
         </div>
-        <button class="toggleButton"> Vue</button>
+        <button class="toggleButton">Vue</button>
       </div>
+      <div class="basMilieu"></div>
     </div>
+
+    <!-- ----------------------LATERAL DROIT-------------------------------------- -->
     <div class="laterale-droite">
+      <div class="hautD"></div>
       <div class="ecran-droit"></div>
+      <div class="basD"></div>
     </div>
 
   </div>
-
-
   <script>
     var preloader = document.getElementById("preloader");
 
@@ -48,6 +52,7 @@
     }
     setTimeout(timeOut, 5200);
   </script>
+  <script src="app.js"></script>
 </body>
 
 

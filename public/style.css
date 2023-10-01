@@ -37,74 +37,83 @@ body{
     min-width: 100vw ;
     display: grid;
     grid-template-columns: 32% 36% 32%;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "latG milieu latD"
+    grid-template-rows: 32% 45% 23%;
+    grid-template-areas: "hautG hautMilieu hautD"
                          "latG milieu latD"
-                         "latG milieu latD";
+                         "basG basMilieu basD";
 }
 /* -----------------------------PARTIE GAUCHE----------------------------------------------- */
 .laterale-gauche{
-   
     border: black solid 2px;
-    height: 100%;
-    width: 100%;
     perspective: 1000px;
 }
+.hautG{
+    grid-area: hautG;
+}
+.basG{
+    grid-area: basG;
+}
 /* ----------------------------écranGauche----------------------------------------------- */
+
 .ecran-gauche{
-  
+
+    grid-area: latG;
     background-color:aqua ;
-    height: 40%;
     width: 50%;
     margin-top: 65%;
     margin-left: 10%; 
     transform: matrix3d(-2, 0.1, 1.5, 0, .045, 1.1, 0, 0, 0, 0, 1, 0, 120, -10, 0, 1);
+ 
 }
-
 /*----------------------------PARTIE DROITE----------------------------------------------- */
 
 .laterale-droite{
     border: black solid 2px;
-    height: 100%;
-    width: 100%;
     perspective: 1000px;
+}
+.hautD{
+    grid-area: hautD;
+}
+.basD{
+    grid-area: basD;
 }
 
 /*----------------------------écranDroite----------------------------------------------- */
 .ecran-droit{
+    grid-area: latD;
     background-color: #b22222;
     width:100% ;
-    height: 40%;
-    margin-top: 65%;
     /* transform: matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1);
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
     transform: matrix3d(1.2, 0.1, 1.5, 0, -.01, 1.1, 0, 0, 0, 0, 1, 0, -50, 30, 0, 1);
 
 }
+
+
+/*----------------------------MILIEU----------------------------------------------- */
+
+.centre{
+    border: black solid 2px;
+   
+}
+.haut-milieu{
+    grid-area: hautMilieu;
+    background-color: cadetblue;
+}
+.ecran-milieu{
+    grid-area: milieu;
+    
+}
 #faceB
 ,#dosB{
     width:150px ;
     height:250px ;
 }
-.barbatos{
-    width: fit-content;
-    height: fit-content;
+.basMilieu{
+    grid-area: basMilieu;
+   
 }
-/*----------------------------MILIEU----------------------------------------------- */
-
-.milieu{
-    grid-area: milieu;
-    border: black solid 2px;
-    height: 100%;
-    width: 100%;
-}
-.ecran-milieu{
-    width:100% ;
-    height: 30%;
-    background-color: #60df2e;
-}
-
 
 /* ------------------------MEDIA QUERIES------------------------
 https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
@@ -159,15 +168,7 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
     }
 } 
 
-.laterale-droite{
-    grid-area: latD;
-}
-.laterale-gauche{
-    grid-area: latG;
-}
-.milieu{
-    grid-area: milieu;
-}
+
 
 
 /* 
