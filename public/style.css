@@ -15,12 +15,12 @@ inherits: false;
     box-sizing: border-box;
 }
 html{
-    scroll-behavior: smooth;
-   margin: 0;
-   padding: 0;
-   height: 100vh;
-   overflow-y: hidden;
-   overflow-x: hidden;
+scroll-behavior: smooth;
+margin: 0;
+padding: 0;
+height: 100vh;
+overflow-y: hidden;
+overflow-x: hidden;
 }
 /* ---------------------BODY------------------------ */
 body{
@@ -36,53 +36,62 @@ body{
     min-height: 100vh;
     min-width: 100vw ;
     display: grid;
-    grid-template-columns: 32% 36% 32%;
-    grid-template-rows: 32% 45% 23%;
-    grid-template-areas: "hautG hautMilieu hautD"
-                         "latG milieu latD"
-                         "basG basMilieu basD";
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 32% 43% 25%;
+    grid-template-areas: "hautG hautM hautD"
+"ecranG milieu ecranD"
+"basG basM basD";
 }
 /* -----------------------------PARTIE GAUCHE----------------------------------------------- */
 .laterale-gauche{
+    grid-area: hautG/ecranG/basG;
     border: black solid 2px;
     perspective: 1000px;
+    height: 100%;
+    width: 100%;
+    background-color:aqua ;
 }
 .hautG{
+    height: 32vh;
     grid-area: hautG;
+    background-color:aqua ;
 }
 .basG{
+    height: 25vh;
     grid-area: basG;
 }
 /* ----------------------------écranGauche----------------------------------------------- */
 
 .ecran-gauche{
-
-    grid-area: latG;
-    background-color:aqua ;
-    width: 50%;
-    margin-top: 65%;
-    margin-left: 10%; 
-    transform: matrix3d(-2, 0.1, 1.5, 0, .045, 1.1, 0, 0, 0, 0, 1, 0, 120, -10, 0, 1);
+    height: 43vh;
+    grid-area: ecranG;
+    
+    /* transform: matrix3d(-2, 0.1, 1.5, 0, .045, 1.1, 0, 0, 0, 0, 1, 0, 120, -10, 0, 1); */
  
 }
 /*----------------------------PARTIE DROITE----------------------------------------------- */
 
 .laterale-droite{
+    grid-area: hautD/ecranD/basD;
     border: black solid 2px;
     perspective: 1000px;
+    height: 100%;
+    width: 100%;
+    background-color: #b22222;
 }
 .hautD{
     grid-area: hautD;
+    height: 32vh;
 }
 .basD{
     grid-area: basD;
+    height: 25vh;
 }
 
 /*----------------------------écranDroite----------------------------------------------- */
 .ecran-droit{
-    grid-area: latD;
-    background-color: #b22222;
-    width:100% ;
+    height: 43vh;
+    grid-area: ecranD;
     /* transform: matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1);
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
@@ -94,24 +103,31 @@ body{
 /*----------------------------MILIEU----------------------------------------------- */
 
 .centre{
+    grid-area: hautM/milieu/basM;
     border: black solid 2px;
-   
+    height: 100%;
+    width: 100%;
+    
 }
 .haut-milieu{
-    grid-area: hautMilieu;
-    background-color: cadetblue;
+    grid-area: hautM;
+    height: 32vh;
 }
 .ecran-milieu{
     grid-area: milieu;
-    
+    height: 43vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: cadetblue;
 }
 #faceB
-,#dosB{
-    width:150px ;
-    height:250px ;
+,#dosB,#scanBface{
+    width:170px ;
+    height:280px ;
 }
 .basMilieu{
-    grid-area: basMilieu;
+    grid-area: basM;
+    height: 25vh;
    
 }
 

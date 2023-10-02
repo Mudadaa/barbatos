@@ -12,9 +12,9 @@
 </head>
 
 <body>
-  <video preload="auto" autoplay id="preloader">
+  <!-- <video preload="auto" autoplay id="preloader">
     <source src="videos/preload.webm" type="video/webm">
-  </video>
+  </video> -->
 
   <div class="container">
     <!-- --------------------------LATERAL GAUCHE------------------------------------ -->
@@ -31,6 +31,9 @@
           <img id="faceB" src="img/face.png" alt="">
           <img id="dosB" src="img/dos.png" hidden alt="">
         </div>
+        <div class="rayBarbatos">
+          <img id="scanBface" src="img/faceScanner.png" alt="">
+        </div>
         <button class="toggleButton">Vue</button>
       </div>
       <div class="basMilieu"></div>
@@ -44,14 +47,16 @@
     </div>
 
   </div>
-  <script>
+  <!-- <script>
+    //fonction qui permet de faire disparaitre le preloader
+    //et de faire apparaitre le site
     var preloader = document.getElementById("preloader");
 
     function timeOut() {
       preloader.style.display = "none";
     }
     setTimeout(timeOut, 5200);
-  </script>
+  </script> -->
   <script src="app.js"></script>
 </body>
 

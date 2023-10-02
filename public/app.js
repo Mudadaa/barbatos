@@ -9,6 +9,7 @@ const app={
       //event listener pour le bouton toggle
       app.toggleOne.addEventListener('click',app.toggle);
     },
+    
     toggle : function(){
       console.log('ça toggle ouuuuu ?');
       if(app.dos.hasAttribute('hidden')){
@@ -18,6 +19,10 @@ const app={
         app.face.removeAttribute('hidden');
         app.dos.setAttribute("hidden", "true");
     };
-  }
+  },
+
+//   hoverScan: function(){
+//  if(){}
+//   },
 };
   document.addEventListener('DOMContentLoaded', app.init);
