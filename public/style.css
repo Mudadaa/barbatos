@@ -49,12 +49,12 @@ body{
     perspective: 1000px;
     height: 100%;
     width: 100%;
-    background-color:aqua ;
+   
 }
 .hautG{
     height: 32vh;
     grid-area: hautG;
-    background-color:aqua ;
+   
 }
 .basG{
     height: 25vh;
@@ -65,9 +65,9 @@ body{
 .ecran-gauche{
     height: 43vh;
     grid-area: ecranG;
-    
-    /* transform: matrix3d(-2, 0.1, 1.5, 0, .045, 1.1, 0, 0, 0, 0, 1, 0, 120, -10, 0, 1); */
- 
+    background-color:aqua ;
+    transform: matrix3d(-2, 0.1, 1.5, 0, .045, 1.1, 0, 0, 0, 0, 1, 0, -160, -10, 0, 1);
+
 }
 /*----------------------------PARTIE DROITE----------------------------------------------- */
 
@@ -77,7 +77,7 @@ body{
     perspective: 1000px;
     height: 100%;
     width: 100%;
-    background-color: #b22222;
+   
 }
 .hautD{
     grid-area: hautD;
@@ -96,7 +96,7 @@ body{
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
     transform: matrix3d(1.2, 0.1, 1.5, 0, -.01, 1.1, 0, 0, 0, 0, 1, 0, -50, 30, 0, 1);
-
+    background-color: #b22222;
 }
 
 
@@ -118,12 +118,17 @@ body{
     height: 43vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: cadetblue;
+    padding-top: 20px;
 }
-#faceB
-,#dosB,#scanBface{
+
+#faceB,#dosB,
+#scanBface,#scanBdos{
     width:170px ;
     height:280px ;
+   
+}
+.rayBarbatos{
+margin-left: 80px;
 }
 .basMilieu{
     grid-area: basM;

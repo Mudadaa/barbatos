@@ -5,9 +5,12 @@ const app={
       app.toggleOne=document.querySelector('.toggleButton');
       app.face=document.getElementById('faceB');
       app.dos=document.getElementById('dosB');
-
+      app.scanBface=document.getElementById('scanBface');
+      app.scanBdos=document.getElementById('scanBdos');
       //event listener pour le bouton toggle
       app.toggleOne.addEventListener('click',app.toggle);
+      app.scanBface.addEventListener('mouseenter',app.hoverScan);
+      app.scanBdos.addEventListener('mouseenter',app.hoverScan);
     },
     
     toggle : function(){
@@ -21,8 +24,14 @@ const app={
     };
   },
 
-//   hoverScan: function(){
-//  if(){}
-//   },
+  hoverScan: function(){
+ if(app.scanBdos.hasAttribute('hidden')){
+    app.scanBdos.removeAttribute('hidden');
+    app.scanBface.setAttribute("hidden", "true"); 
+ }else{
+    app.scanBface.removeAttribute('hidden');
+    app.scanBdos.setAttribute("hidden", "true");
+ }
+  },
 };
   document.addEventListener('DOMContentLoaded', app.init);
