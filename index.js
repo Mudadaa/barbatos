@@ -29,12 +29,8 @@ app.use(express.static('public'));
 
 // routage !
 app.use(router);
-// const loggerMiddleware = (req, res, next) => {
-//   console.log('Middleware appelé !');
-// };
-// app.use(loggerMiddleware);
-// on lance le serveur
 
+//écoute du serveur sur le port 3000
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });

@@ -14,6 +14,16 @@ const mainController = {
         }
       
     }, 
+    ToolsPage:(request, response) => {
+       try {
+        response.render('outils');
+       } catch (error) {
+        console.log(error)
+
+        response.status(500).send("Une erreur de serveur est survenue, désolé du souci");
+   
+       }
+    },
    
 };
 

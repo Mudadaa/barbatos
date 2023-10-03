@@ -6,5 +6,7 @@ const mainController = require('./mainController');
 
 //page d'accueil
 router.get('/', mainController.HomePage);
-//on exporte le routerrs
+//page d'outils qui détailles les logiciels/techniques utilisées
+router.get('/outils.ejs', mainController.ToolsPage);
+//on exporte le router
 module.exports = router;

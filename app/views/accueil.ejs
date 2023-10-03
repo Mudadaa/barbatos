@@ -30,14 +30,20 @@
         <div class="normalBarbatos">
           <img id="faceB" src="img/face.png" alt="">
           <img id="dosB" src="img/dos.png" hidden alt="">
+
         </div>
         <div class="rayBarbatos">
           <img id="scanBface" src="img/faceScanner.png" alt="">
           <img id="scanBdos" hidden src="img/dosScanner.png" alt="">
         </div>
-        <button class="toggleButton">Vue</button>
       </div>
-      <div class="basMilieu"></div>
+      <button class="toggleButton">Vue</button>
+      <div class="basMilieu">
+        <div class="outils">
+          <a href="./outils.ejs" target="_blank"><button>Outils Utilisés</button></a>
+        </div>
+
+      </div>
     </div>
 
     <!-- ----------------------LATERAL DROIT-------------------------------------- -->
@@ -49,10 +55,8 @@
 
   </div>
   <!-- <script>
-    //fonction qui permet de faire disparaitre le preloader
-    //et de faire apparaitre le site
     var preloader = document.getElementById("preloader");
-
+    // faire disparaitre le preloader et  faire apparaitre le site
     function timeOut() {
       preloader.style.display = "none";
     }
