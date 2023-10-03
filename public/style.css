@@ -72,7 +72,7 @@ body{
 .ecran-gauche{
     height: 43vh;
     grid-area: ecranG;
-    background-color:aqua ;
+    background-color:rgba(0, 255, 255, 0.294) ;
     transform: matrix3d(-2, 0.1, 1.5, 0, .045, 1.1, 0, 0, 0, 0, 1, 0, -160, -10, 0, 1);
 
 }
@@ -103,7 +103,7 @@ body{
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
     transform: matrix3d(1.2, 0.1, 1.5, 0, -.01, 1.1, 0, 0, 0, 0, 1, 0, -50, 30, 0, 1);
-    background-color: #b22222;
+    background-color: #b2222258;
 }
 
 
@@ -132,10 +132,19 @@ body{
 #scanBface,#scanBdos{
     width:170px ;
     height:280px ;
+    background-image: url('/img/card.png');
+    background-color: rgba(0, 255, 255, 0.076);
+    border:1px solid #0C7175 ;
+    border-radius: 4px;
    
 }
 #scanBface,#scanBdos{
     transform: scaleX(-1);
+}
+#faceB:hover, #dosB:hover{
+    scale: 1.6;
+    margin-left: 70px;
+    transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .rayBarbatos{
 margin-left: 80px;
@@ -143,7 +152,7 @@ margin-left: 80px;
 .toggleButton{
     width: 200px;
     padding: 5px;
-    margin-left: 10%;
+    margin: 10%;
 }
 .basMilieu{
     grid-area: basM;
