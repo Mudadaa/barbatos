@@ -37,19 +37,29 @@ const app={
     app.scanBdos.setAttribute("hidden", "true");
  }
   },
-  resizingLoad: function() {
+  resizingLoadOne: function() {
     if (app.face && app.dos && app.scanBface && app.scanBdos) {
         app.scanBdos.style.height = '280px';
         app.scanBface.style.height = '280px';
         app.face.style.height = '280px';
         app.dos.style.height = '280px';
-        app.screenR.style.height = '43vh';
-        app.screenL.style.height = '43vh';
     }
-    console.log('resizingLoad');
+   
+  },
+  resizingLoadTwo: function() {
+    if (app.screenR){
+      app.screenR.style.height = '43vh';
+    }
+  },
+  resizingLoadThree: function() {
+    if (app.screenL){
+      app.screenL.style.height = '43vh';
+    }
   },
     resizingTimeOut:function(){
-      setTimeout(app.resizingLoad,1000);
+      setTimeout(app.resizingLoadOne,7500);
+      setTimeout(app.resizingLoadTwo,9000);
+      setTimeout(app.resizingLoadThree,9600);
     },
 };
   document.addEventListener('DOMContentLoaded', app.init);

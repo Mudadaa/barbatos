@@ -16,6 +16,10 @@ inherits: false;
     font-family: 'Neon';
     src: url('./fonts/neon/._NEON CLUB MUSIC_medium.otf')format("opentype");
 }
+@font-face {
+    font-family: Toon;
+    src: url('./fonts/toon/TooneyNoodleNF.ttf');
+}
 * {
     margin: 0;
     padding: 0;
@@ -112,7 +116,7 @@ body{
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
     transform: matrix3d(1.2, 0.1, 1.5, 0, -.005, 1.1, 0, 0, 0, 0, 1, 0, -30, 30, 0, 1);
-    width: 80%;
+    width: 82%;
     background-color: #fc9a2b73;
     border:1px solid #b2222258;
     border-radius: 4px;
@@ -145,8 +149,14 @@ body{
     z-index: 50;
 }
 .tradText{
-    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
     color: azure;
+    text-align:left;
+    word-break:break-all;
+    font-family: 'Toon';
 }
 #faceB,#dosB,
 #scanBface,#scanBdos{
