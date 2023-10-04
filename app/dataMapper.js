@@ -7,7 +7,7 @@ getGundamTrad : async ()=> {
     const result = await client.query(queryString);
     
     const tradList= result.rows;
-    console.log(tradList);
+    //on renvoie la liste des traductions
     return tradList;
     
 }

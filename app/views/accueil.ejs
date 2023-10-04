@@ -12,15 +12,19 @@
 </head>
 
 <body>
-  <video preload="auto" autoplay id="preloader">
+  <!-- <video preload="auto" autoplay id="preloader">
     <source src="videos/preload.webm" type="video/webm">
-  </video>
+  </video> -->
 
   <div class="container">
     <!-- --------------------------LATERAL GAUCHE------------------------------------ -->
     <div class="laterale-gauche">
       <div class="hautG"></div>
-      <div class="ecran-gauche"></div>
+      <div class="ecran-gauche">
+        <div class="sideVideos"></div>
+        <div class="sideVideos"></div>
+        <div class="sideVideos"></div>
+      </div>
       <div class="basG"></div>
     </div>
     <!-- ---------------------------MILIEU------------------------------------- -->
@@ -30,14 +34,21 @@
         <div class="normalBarbatos">
           <img id="faceB" src="img/face.png" alt="">
           <img id="dosB" src="img/dos.png" hidden alt="">
-
+        </div>
+        <div class="tradText">
+          <span class="english"> <%= tradList[0].content %></span>
+          <span class="japanese"><%= tradList[1].content %></span>
         </div>
         <div class="rayBarbatos">
           <img id="scanBface" src="img/faceScanner.png" alt="">
           <img id="scanBdos" hidden src="img/dosScanner.png" alt="">
         </div>
       </div>
-      <button class="toggleButton">Vue</button>
+      <div class="buttons">
+        <button class="intelButton"> <img class="flag" src="img/uk-us.png" alt=""></button>
+        <button class="johoButton"> <img class="flag" src="img/japan.png" alt=""></button>
+      </div>
+
       <div class="basMilieu">
         <div class="outils">
           <a href="./outils.ejs" target="_blank"><button>Outils Utilisés</button></a>
@@ -54,14 +65,14 @@
     </div>
 
   </div>
-  <script>
+  <!-- <script>
     var preloader = document.getElementById("preloader");
     // faire disparaitre le preloader et  faire apparaitre le site
     function timeOut() {
       preloader.style.display = "none";
     }
     setTimeout(timeOut, 6400);
-  </script>
+  </script> -->
   <script src="app.js"></script>
 </body>
 
