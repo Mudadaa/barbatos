@@ -10,9 +10,16 @@ const app={
       app.scanBdos=document.getElementById('scanBdos');
       app.screenR=document.querySelector('.ecran-droit');
       app.screenL=document.querySelector('.ecran-gauche');
+      app.english=document.querySelector('.english');
+      app.japanese=document.querySelector('.japanese');
+      app.intelButton=document.querySelector('.intelButton');
+      app.johoButton=document.querySelector('.johoButton');
       //event listener pour la div qui toggle
       app.toggleDiv.addEventListener('click',app.toggle);
       app.scanDiv.addEventListener('click',app.toggleScan);
+      //event listener pour les boutons de changement de langue
+      app.intelButton.addEventListener('click',app.changeEnglish);
+      app.johoButton.addEventListener('click',app.changeJapanese);
       //pour le resize qui simule l'allumage du gundam
       app.resizingTimeOut();
     },
@@ -37,6 +44,18 @@ const app={
     app.scanBdos.setAttribute("hidden", "true");
  }
   },
+changeEnglish: function(){
+  if(app.english.hasAttribute('hidden')){
+    app.english.removeAttribute('hidden');
+    app.japanese.setAttribute("hidden", "true");
+}
+},
+changeJapanese: function(){
+  if(app.japanese.hasAttribute('hidden')){
+    app.japanese.removeAttribute('hidden');
+    app.english.setAttribute("hidden", "true");
+}
+}, 
   resizingLoadOne: function() {
     if (app.face && app.dos && app.scanBface && app.scanBdos) {
         app.scanBdos.style.height = '280px';
