@@ -152,11 +152,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 150px;
+    width: 100%;
     color: azure;
     text-align:left;
     word-break:break-all;
     font-family: 'Toon';
+    border-radius: 4px 5px;
+    border: #0C7175 solid 1px;
+    background-color: rgba(127, 249, 255, 0.381);
 }
 #faceB,#dosB,
 #scanBface,#scanBdos{

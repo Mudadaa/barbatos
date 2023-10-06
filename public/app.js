@@ -2,6 +2,7 @@ const app={
     //contiendra les nouvelles fonctions de dynamisation de la page web
     //pour sa refonte
     init :function (){
+      app.milieu=document.querySelector('.ecran-milieu');
       app.toggleDiv=document.querySelector('.normalBarbatos');
       app.scanDiv=document.querySelector('.rayBarbatos');
       app.face=document.getElementById('faceB');
@@ -46,12 +47,16 @@ const app={
   },
 changeEnglish: function(){
   if(app.english.hasAttribute('hidden')){
+    app.milieu.style.gridTemplateColumns = "1fr 1fr";
+    app.scanDiv.style.display='none';
     app.english.removeAttribute('hidden');
     app.japanese.setAttribute("hidden", "true");
 }
 },
 changeJapanese: function(){
   if(app.japanese.hasAttribute('hidden')){
+    app.milieu.style.gridTemplateColumns = "1fr 1fr";
+    app.scanDiv.style.display='none';
     app.japanese.removeAttribute('hidden');
     app.english.setAttribute("hidden", "true");
 }
