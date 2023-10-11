@@ -53,6 +53,25 @@ body{
 "ecranG milieu ecranD"
 "basG basM basD";
 }
+.containerVideos{
+   
+   grid-area:ecranG/milieu/ecranD ;
+    width: 100%;
+    height: 100%;
+   
+}
+ #premiere{
+    grid-area: ecranG ;
+}
+#deuxieme{
+    grid-area: milieu;
+}
+#troisieme{
+    grid-area: ecranD;
+} 
+.skills{
+    object-fit: fill;
+}
 /* -----------------------------PARTIE GAUCHE----------------------------------------------- */
 .laterale-gauche{
     grid-area: hautG/ecranG/basG;
@@ -61,6 +80,10 @@ body{
     height: 100%;
     width: 100%;
    
+}
+.sideVideos video{
+   width: 100px;
+   height: 300px;
 }
 .hautG{
     height: 32vh;
@@ -81,15 +104,23 @@ body{
     border:1px solid #0C7175 ;
     border-radius: 4px;
    transition: all  400ms cubic-bezier(0.39, 0.575, 0.565, 1);
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   width: 50%;
+  width: 50%;
 }
 .sideVideos{
-    background-color: rgba(222, 184, 135, 0.558);
-    margin-top: 10px;
-    height: 90%;
-    border: black solid 2px;
+    height: 100%;
+}
+.sideVideos video{
+width: 100%;
+height: 100%;
+object-fit: fill;
+}
+.skills {
+    width: 50%;
+    height: 100%;
+    object-fit: fill; 
+    background-color: rgba(0, 255, 255, 0.076);
+    border:1px solid #0C7175 ;
+    border-radius: 4px;
 }
 /*----------------------------PARTIE DROITE----------------------------------------------- */
 .laterale-droite{
