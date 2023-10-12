@@ -25,12 +25,25 @@ const app={
       app.buttons=document.querySelector('.buttons');
       app.intelButton=document.querySelector('.intelButton');
       app.johoButton=document.querySelector('.johoButton');
+      app.firstVideo=document.getElementById('premiere');
+      app.secondVideo=document.getElementById('deuxieme');
+      app.thirdVideo=document.getElementById('troisieme');
+      app.body=document.getElementById('body');
+      app.massue=document.getElementById('massue');
+      app.lupus=document.getElementById('lupus');
       //event listener pour la div qui toggle
       app.toggleDiv.addEventListener('click',app.toggle);
       app.scanDiv.addEventListener('click',app.toggleScan);
       //event pour que laterale gauche se déplace au centre et occupela gauche et le milieu
       app.screenL.addEventListener('mouseenter',app.lateralGHover);
-      app.screenL.addEventListener('mouseleave',app.leaveHover);
+      
+      //toggle hover sur les videos pour afficher les img
+       app.firstVideo.addEventListener('mouseenter',app.bodyHover);
+      app.secondVideo.addEventListener('mouseover',app.massueHover);
+      app.thirdVideo.addEventListener('mouseover',app.lupusHover);
+      //removeEventListener pour que les vidéos se relancent
+      
+        app.firstVideo.removeEventListener('click',app.bodyHover);
       
       //event listener pour les boutons de changement de langue
       app.intelButton.addEventListener('click',app.changeEnglish);
@@ -60,21 +73,31 @@ const app={
  }
   },
   lateralGHover: function(){
-    console.log('ça hover ouuuuu ?');
-    
     app.gauche.style.display='none';
     app.centre.style.display='none';
     app.droite.style.display='none';
    app.containerVideos.removeAttribute('hidden');
-    app.screenL.style.transform='none';
     app.screenR.style.transform='none';
-app.skills.play();
+    
 },
     
-    leaveHover: function(){
-console.log('ça leave ouuuuu ?');
+bodyHover: function(){
+  console.log('ça hover ?');
+  app.firstVideo.style.display='none';
+  app.body.removeAttribute('hidden');
+},
 
-    },
+massueHover: function(){
+    app.secondVideo.style.display='none';
+    app.massue.removeAttribute('hidden');
+   
+},
+lupusHover: function(){
+  if(app.lupus.hasAttribute('hidden')){
+    app.thirdVideo.style.display='none';
+    app.lupus.removeAttribute('hidden');
+  }
+},
 changeEnglish: function(){
   if(app.english.hasAttribute('hidden')){
     app.milieu.style.gridTemplateColumns = "1fr 1fr";
@@ -111,9 +134,10 @@ changeJapanese: function(){
     }
   },
     resizingTimeOut:function(){
-      setTimeout(app.resizingLoadOne,7500);
-      setTimeout(app.resizingLoadTwo,9000);
-      setTimeout(app.resizingLoadThree,9600);
+      //7500, 9000, 9600
+      setTimeout(app.resizingLoadOne,200);
+      setTimeout(app.resizingLoadTwo,300);
+      setTimeout(app.resizingLoadThree,300);
     },
 };
   document.addEventListener('DOMContentLoaded', app.init);
