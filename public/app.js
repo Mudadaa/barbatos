@@ -25,6 +25,10 @@ const app={
       app.buttons=document.querySelector('.buttons');
       app.intelButton=document.querySelector('.intelButton');
       app.johoButton=document.querySelector('.johoButton');
+      // ---------------------------------------------------
+      app.perfOne=document.getElementById('perfOne');
+      app.perfTwo=document.getElementById('perfTwo');
+      app.perfThree=document.getElementById('perfThree');
       app.firstVideo=document.getElementById('premiere');
       app.secondVideo=document.getElementById('deuxieme');
       app.thirdVideo=document.getElementById('troisieme');
@@ -38,18 +42,25 @@ const app={
       app.screenL.addEventListener('mouseenter',app.lateralGHover);
       
       //toggle hover sur les videos pour afficher les img
-       app.firstVideo.addEventListener('mouseenter',app.bodyHover);
-      app.secondVideo.addEventListener('mouseover',app.massueHover);
-      app.thirdVideo.addEventListener('mouseover',app.lupusHover);
-      //removeEventListener pour que les vidéos se relancent
+       app.perfOne.addEventListener('mouseleave',app.bodyHover);
+       app.perfOne.addEventListener('mouseover',app.bodyLHover);
+        app.perfTwo.addEventListener('mouseleave',app.massueHover);
+        app.perfTwo.addEventListener('mouseover',app.massueLHover);
+        app.perfThree.addEventListener('mouseleave',app.lupusHover);
+        app.perfThree.addEventListener('mouseover',app.lupusLHover);
       
-        app.firstVideo.removeEventListener('click',app.bodyHover);
+      //removeEventListener pour revenir à la normale
+      app.quit=document.querySelector('.quitVideo');
+      app.quit.addEventListener('click',app.removeHandler);
+      
+    
       
       //event listener pour les boutons de changement de langue
       app.intelButton.addEventListener('click',app.changeEnglish);
       app.johoButton.addEventListener('click',app.changeJapanese);
       //pour le resize qui simule l'allumage du gundam
       app.resizingTimeOut();
+      app.skills.play();
     },
     
     toggle : function(){
@@ -77,26 +88,46 @@ const app={
     app.centre.style.display='none';
     app.droite.style.display='none';
    app.containerVideos.removeAttribute('hidden');
-    app.screenR.style.transform='none';
     
+    
+},
+removeHandler: function(){
+  console.log('ça marche ?');
+  app.gauche.style.display='unset';
+  app.centre.style.display='unset';
+  app.droite.style.display='unset';
+  app.containerVideos.setAttribute('hidden', 'true');
+  
 },
     
 bodyHover: function(){
-  console.log('ça hover ?');
   app.firstVideo.style.display='none';
   app.body.removeAttribute('hidden');
+ 
 },
-
+bodyLHover: function(){
+  app.body.setAttribute('hidden', 'true');
+  app.firstVideo.style.display='inline-flex';
+  app.firstVideo.play();
+},
 massueHover: function(){
-    app.secondVideo.style.display='none';
-    app.massue.removeAttribute('hidden');
-   
+  app.secondVideo.style.display='none';
+  app.massue.removeAttribute('hidden');
+},
+massueLHover: function(){
+  app.massue.setAttribute('hidden', 'true');
+  app.secondVideo.style.display='inline-flex';
+  app.secondVideo.play();
 },
 lupusHover: function(){
-  if(app.lupus.hasAttribute('hidden')){
-    app.thirdVideo.style.display='none';
-    app.lupus.removeAttribute('hidden');
-  }
+  
+  app.thirdVideo.style.display='none';
+  app.lupus.removeAttribute('hidden');
+},
+lupusLHover: function(){
+  app.lupus.setAttribute('hidden', 'true');
+  app.thirdVideo.style.display='inline-flex';
+  app.thirdVideo.play();
 },
 changeEnglish: function(){
   if(app.english.hasAttribute('hidden')){

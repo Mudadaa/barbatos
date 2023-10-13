@@ -162,6 +162,7 @@ justify-content: space-around;
     background-color: #fc9a2b73;
     border:1px solid #b2222258;
     border-radius: 4px;
+
    transition: all  400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
