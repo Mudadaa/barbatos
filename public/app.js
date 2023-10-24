@@ -25,7 +25,7 @@ const app={
       app.buttons=document.querySelector('.buttons');
       app.intelButton=document.querySelector('.intelButton');
       app.johoButton=document.querySelector('.johoButton');
-      // ---------------------------------------------------
+      // ---------------DIV Videos IMG SKILLS------------------------------------
       app.perfOne=document.getElementById('perfOne');
       app.perfTwo=document.getElementById('perfTwo');
       app.perfThree=document.getElementById('perfThree');
@@ -39,7 +39,8 @@ const app={
       app.toggleDiv.addEventListener('click',app.toggle);
       app.scanDiv.addEventListener('click',app.toggleScan);
       //event pour que laterale gauche se déplace au centre et occupela gauche et le milieu
-      app.screenL.addEventListener('mouseenter',app.lateralGHover);
+      
+      app.screenL.addEventListener('click',app.lateralGHover);
       
       //toggle hover sur les videos pour afficher les img
        app.perfOne.addEventListener('mouseleave',app.bodyHover);
@@ -83,6 +84,7 @@ const app={
     app.scanBdos.setAttribute("hidden", "true");
  }
   },
+ 
   lateralGHover: function(){
     app.gauche.style.display='none';
     app.centre.style.display='none';
@@ -147,10 +149,10 @@ changeJapanese: function(){
 }, 
   resizingLoadOne: function() {
     if (app.face && app.dos && app.scanBface && app.scanBdos) {
-        app.scanBdos.style.height = '280px';
-        app.scanBface.style.height = '280px';
-        app.face.style.height = '280px';
-        app.dos.style.height = '280px';
+        app.scanBdos.style.height = '240px';
+        app.scanBface.style.height = '240px';
+        app.face.style.height = '240px';
+        app.dos.style.height = '240px';
     }
    
   },
@@ -168,7 +170,7 @@ changeJapanese: function(){
       //7500, 9000, 9600
       setTimeout(app.resizingLoadOne,200);
       setTimeout(app.resizingLoadTwo,300);
-      setTimeout(app.resizingLoadThree,300);
+      setTimeout(app.resizingLoadThree,400);
     },
 };
   document.addEventListener('DOMContentLoaded', app.init);
