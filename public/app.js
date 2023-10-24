@@ -148,11 +148,21 @@ changeJapanese: function(){
 }
 }, 
   resizingLoadOne: function() {
+    //pour adapter les dimesnions au format téléphone
+    const mediaQuery = window.matchMedia('(max-height: 575.98px) ');
+//pour l'effet d'ouverture d'écrans
     if (app.face && app.dos && app.scanBface && app.scanBdos) {
         app.scanBdos.style.height = '240px';
         app.scanBface.style.height = '240px';
         app.face.style.height = '240px';
         app.dos.style.height = '240px';
+    }
+  //téléphone
+    if (mediaQuery.matches) {
+      app.scanBdos.style.height = '160px';
+        app.scanBface.style.height = '160px';
+        app.face.style.height = '160px';
+        app.dos.style.height = '160px';
     }
    
   },
