@@ -90,8 +90,6 @@ const app={
     app.centre.style.display='none';
     app.droite.style.display='none';
    app.containerVideos.removeAttribute('hidden');
-    
-    
 },
 removeHandler: function(){
   console.log('ça marche ?');
@@ -99,20 +97,22 @@ removeHandler: function(){
   app.centre.style.display='unset';
   app.droite.style.display='unset';
   app.containerVideos.setAttribute('hidden', 'true');
-  
 },
     
 bodyHover: function(){
+  const mediaQuery = window.matchMedia('(max-height: 575.98px) ');
   app.firstVideo.style.display='none';
   app.body.removeAttribute('hidden');
  
 },
 bodyLHover: function(){
+  
   app.body.setAttribute('hidden', 'true');
   app.firstVideo.style.display='inline-flex';
   app.firstVideo.play();
 },
 massueHover: function(){
+  const mediaQuery = window.matchMedia('(max-height: 575.98px) ');
   app.secondVideo.style.display='none';
   app.massue.removeAttribute('hidden');
 },
@@ -122,9 +122,12 @@ massueLHover: function(){
   app.secondVideo.play();
 },
 lupusHover: function(){
-  
+  const mediaQuery = window.matchMedia('(max-height: 575.98px) ');
   app.thirdVideo.style.display='none';
   app.lupus.removeAttribute('hidden');
+  if (mediaQuery.matches) {
+    app.thirdVideo.play();
+  }
 },
 lupusLHover: function(){
   app.lupus.setAttribute('hidden', 'true');
@@ -159,10 +162,10 @@ changeJapanese: function(){
     }
   //téléphone
     if (mediaQuery.matches) {
-      app.scanBdos.style.height = '160px';
-        app.scanBface.style.height = '160px';
-        app.face.style.height = '160px';
-        app.dos.style.height = '160px';
+      app.scanBdos.style.height = '140px';
+        app.scanBface.style.height = '140px';
+        app.face.style.height = '140px';
+        app.dos.style.height = '140px';
     }
    
   },

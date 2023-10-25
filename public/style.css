@@ -139,11 +139,9 @@ border:1px solid rgba(65, 35, 35, 0.874);
 /*----------------------------PARTIE DROITE----------------------------------------------- */
 .laterale-droite{
     grid-area: hautD/ecranD/basD;
-    
     perspective: 1000px;
     height: 100%;
     width: 100%;
-   
 }
 .hautD{
     grid-area: hautD;
@@ -305,14 +303,42 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
     .container{
         grid-template-rows: 15% 55% 35%;
     }
+    .containerVideos{
+        height:100vh;
+        width: 100vw ;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        
+        }
+         
+         #perf video{
+            height: 800px;
+            width: 800px;
+        }
+        .skills{
+            width: 80%;
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+    .quitVideo{
+    margin: 50px 15px;
+    margin-left: 50px;
+    width: 60px;
+    height: 60px;
+    }
     .ecran-milieu{
-        padding-top: 0;
+        padding-top: 20px;
+        display: grid;
+    grid-template-columns: 1fr 2fr;
     }
     .ecran-gauche{
         /* transform: matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1);
                 a, b, c, d définissent la rotation et l'échelle.
                 tx et ty définissent les translations sur les axes X et Y. */
-                transform: matrix3d(-1.9, 0.4, 2, 0, .02, 1.1, 0, 0, 0, 0, 1, 0, 90, 10, 0, 1);
+                transform: matrix3d(-1.9, 0.5, 2, 0, .02, 1, 0, 0, 0, 0, 1, 0, 90, 10, 0, 1);
                 
             }
             
@@ -321,16 +347,38 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
             /* transform: matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1);
             a, b, c, d définissent la rotation et l'échelle.
             tx et ty définissent les translations sur les axes X et Y. */
-            transform: matrix3d(0.95, 0.4, 2, 0, -0.02, 1, 0, 0, 0, 0, 1, 0, -40, 10, 0, 1);
+            transform: matrix3d(0.95, 0.5, 2, 0, -0.02, 1, 0, 0, 0, 0, 1, 0, -40, 10, 0, 1);
             
         }
-        #faceB,#dosB,
-        #scanBface,#scanBdos{
+        .rayBarbatos{
+            display: none;
+        }
+        .normalBarbatos{
+            height: fit-content;
+        }
+        #faceB,#dosB{
             width:100px ;
             height: 100px;
        }
-      
-     
+      .tradText{
+        font-size: smaller;
+        width: fit-content;
+        height: fit-content;
+      }
+     .buttons{
+        display: block;
+     }
+     .intelButton{
+        width: 30px;
+     }
+     .johoButton{
+        width: 30px;
+     }
+     .flag{
+        height:20px;
+        width: 20px;
+        opacity: 1;
+    }
     }
 /* tablette */
  @media only screen and (min-width:780px) and (max-width: 990px)and (orientation: landscape){
