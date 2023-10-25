@@ -129,12 +129,14 @@ border:1px solid rgba(65, 35, 35, 0.874);
 
 }
 .skills {
-    width: 50%;
+    width: 80%;
     height: 100%;
     object-fit: fill; 
     background-color: rgba(0, 255, 255, 0.076);
     border:1px solid #0C7175 ;
     border-radius: 4px;
+    margin-top: 50px;
+    margin-left: 20px;
 }
 /*----------------------------PARTIE DROITE----------------------------------------------- */
 .laterale-droite{
@@ -155,18 +157,48 @@ border:1px solid rgba(65, 35, 35, 0.874);
 .ecran-droit{
     height: 0.5vh;
     grid-area: ecranD;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     /* transform: matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1);
     a, b, c, d définissent la rotation et l'échelle.
     tx et ty définissent les translations sur les axes X et Y. */
-   
     transform: matrix3d(1, 0.05, 1.8, 0, -.005, 1, 0, 0, 0, 0, 1, 0, -80, 30, 0, 1);
-    
     background-color: #fc9a2b73;
     border:1px solid #b2222258;
     border-radius: 4px;
    transition: all  400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+   color: azure;
+}
+.ecran-droit:hover{
+    transform: matrix3d(0.95, -0.001, 0.9, 0, -.01, 1, 0, 0, 0, 0, 1, 0, -50, 30, 0, 1);
+    opacity: 1;
+    z-index: 1000;
 }
 
+.mikazuki{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    align-items: flex-end;
+}
+.mikazuki img{
+    opacity: 0.8;
+}
+.mikaOne {
+    max-height: fit-content;
+    height: 60%;
+    width: 150px;
+   align-items: flex-end;
+   margin-right: 20px;
+}
+.mikaTwo{
+    max-height: fit-content;
+    height: 60%;
+    width: 150px;
+}
 /*----------------------------MILIEU----------------------------------------------- */
 .centre{
     grid-area: hautM/milieu/basM;
@@ -313,16 +345,7 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
         justify-content: space-around;
         
         }
-         
-         #perf video{
-            height: 800px;
-            width: 800px;
-        }
-        .skills{
-            width: 80%;
-            margin-top: 50px;
-            margin-left: 20px;
-        }
+        
     .quitVideo{
     margin: 50px 15px;
     margin-left: 50px;
@@ -381,22 +404,17 @@ https://talks.freelancerepublik.com/responsive-web-design-media-queries-css/ */
     }
     }
 /* tablette */
- @media only screen and (min-width:780px) and (max-width: 990px)and (orientation: landscape){
-    body {
-        min-height: 100vh;
-        min-width: 100vw ;
-        background-image:url(img/cockpit.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+ @media only screen and (min-width:780px) and (max-width: 990px) and (orientation: landscape){
+   
+    .rayBarbatos{
+        display: none;
+    }
+    .ecran-milieu{
+        padding-top: 20px;
         display: grid;
-        grid-template-columns: 32% 36% 32%;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "latG milieu latD"
-                             "latG milieu latD"
-                             "latG milieu latD";
+    grid-template-columns: 1fr 2fr;
     }
  } 
- 
 
 /*desktop 1920-1200px*/
 @media only screen and (min-width:1920px)  and (max-width: 2000px){
