@@ -1,3 +1,4 @@
+
 const app={
     //contiendra les nouvelles fonctions de dynamisation de la page web
     //pour sa refonte
@@ -55,8 +56,17 @@ const app={
       app.quit=document.querySelector('.quitVideo');
       app.quit.addEventListener('click',app.removeHandler);
       
-    
-      
+    //leftScreen Communication with MikaZuki
+    app.notice=document.querySelector('.notice');
+    app.speech=document.querySelector('.speech');
+    app.speechOne=document.querySelector('.mika-speechOne');
+    app.speechTwo=document.querySelector('.mika-speechTwo');
+    app.mikazuki=document.querySelector('.mikazuki');
+    app.mikaOne=document.querySelector('.mikaOne');
+    app.mikaTwo=document.querySelector('.mikaTwo');
+    app.notice.addEventListener('click',app.mikaCommunication);
+    app.notice.addEventListener('click',app.mikaSpeechAddLetter);
+    app.notice.addEventListener('click',app.mikaSpeechAddLetterTwo);
       //event listener pour les boutons de changement de langue
       app.intelButton.addEventListener('click',app.changeEnglish);
       app.johoButton.addEventListener('click',app.changeJapanese);
@@ -86,7 +96,59 @@ const app={
     app.scanBdos.setAttribute("hidden", "true");
  }
   },
- 
+  mikaCommunication: function(){
+    app.notice.setAttribute('hidden', 'true');
+    app.speech.removeAttribute('hidden');
+    app.mikazuki.removeAttribute('hidden');
+    app.mikaOne.removeAttribute('hidden');
+  },
+  mikaSpeechAddLetter: function(){
+    const textOne="Hey! T'es aux commandes de Barbatos! Ne l'abîmes pas sinon t'auras à faire à moi !";
+    const textContainer=app.speech;
+    let index=0;
+    let delay=50;
+    function addLetter (){
+    if(index<textOne.length){
+      const letter=document.createElement('span');
+      letter.textContent+=textOne[index];
+      textContainer.appendChild(letter);
+      index++;
+      // Délai entre chaque lettre (en millisecondes)
+      if(index % 10 === 0){
+        delay=100;
+    }
+      setTimeout(addLetter, delay);
+    } else{
+      app.mikaSpeechAddLetterTwo();
+    }
+  }
+  addLetter();
+  },
+  mikaSpeechAddLetterTwo: function(){
+    app.speechOne.setAttribute('hidden', 'true');
+    app.mikaOne.setAttribute('hidden', 'true');
+    app.speechTwo.removeAttribute('hidden');
+    app.mikaTwo.removeAttribute('hidden');
+    const textTwo="Tu te débrouilles pas trop mal pour un bleu ! Passes voir Orga, notre chef, il te trouvera un poste";
+    const textContainer=app.speech;
+    let index=0;
+    let delay=50;
+    function addLetter (){
+    if(index<textOne.length){
+      const letter=document.createElement('span');
+      letter.textContent+=textTwo[index];
+      textContainer.appendChild(letter);
+      index++;
+      // Délai entre chaque lettre (en millisecondes)
+      if(index % 10 === 0){
+        delay=100;
+    }
+      setTimeout(addLetter, delay);
+  }
+  
+}
+addLetter();
+  },
   lateralGHover: function(){
     app.gauche.style.display='none';
     app.centre.style.display='none';
@@ -139,19 +201,27 @@ lupusLHover: function(){
 changeEnglish: function(){
   if(app.english.hasAttribute('hidden')){
     app.milieu.style.gridTemplateColumns = "1fr 1fr";
+    app.tradText.removeAttribute('hidden');
     app.scanDiv.style.display='none';
     app.english.removeAttribute('hidden');
     app.japanese.setAttribute("hidden", "true");
     app.closingButton.removeAttribute('hidden');
+    app.tradText.style.backgroundColor='rgba(0, 255, 255, 0.076)';
+    app.tradText.style.border='#0C7175 solid 1px';
+    app.tradText.style.backgroundImage="url('/img/card.png')";
 }
 },
 changeJapanese: function(){
   if(app.japanese.hasAttribute('hidden')){
     app.milieu.style.gridTemplateColumns = "1fr 1fr";
+    app.tradText.removeAttribute('hidden');
     app.scanDiv.style.display='none';
     app.japanese.removeAttribute('hidden');
     app.english.setAttribute("hidden", "true");
     app.closingButton.removeAttribute('hidden');
+    app.tradText.style.backgroundColor='rgba(0, 255, 255, 0.076)';
+    app.tradText.style.border='#0C7175 solid 1px';
+    app.tradText.style.backgroundImage="url('/img/card.png')";
 }
 }, 
 closingText: function(){
@@ -160,6 +230,9 @@ closingText: function(){
   app.japanese.setAttribute("hidden", "true");
   app.scanDiv.style.display='unset';
   app.milieu.style.gridTemplateColumns = "1fr 1fr 1fr";
+  app.tradText.style.backgroundColor='transparent';
+  app.tradText.style.border='none';
+  app.tradText.style.backgroundImage='none';
 },
   resizingLoadOne: function() {
     //pour adapter les dimesnions au format téléphone

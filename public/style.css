@@ -7,6 +7,12 @@ inherits: false;
     --clr-1:#b23a3a;
     --clr-2:#60df2e;
     --clr-3:#e91010;
+    --clr-4:orange;
+    --clr-5:#ff6600;
+    --clr-6: #00ffff13;
+    --clr-7: #72ffd6;
+    --clr-8: #48f779;
+    --clr-9:#0C7175;
 }
 @font-face {
     font-family:'Roboto';
@@ -65,8 +71,8 @@ justify-content: space-around;
 h2{
     display: block;
     background: url(img/card.png);
-    background: rgb(114,255,214);
-    background: radial-gradient(circle, rgba(114,255,214,1) 0%, rgba(72,247,121,1) 100%); 
+    background: var(--clr-7);
+    background: radial-gradient(circle, var(--clr-7) 0%, var(--clr-8)); 
     border-radius: 5px;
     padding: 6px;
     width: fit-content;
@@ -151,8 +157,7 @@ border:1px solid rgba(65, 35, 35, 0.874);
     width: 80%;
     height: 100%;
     object-fit: fill; 
-    background-color: rgba(0, 255, 255, 0.076);
-    border:1px solid #0C7175 ;
+    border:1px solid var(--clr-7);
     border-radius: 4px;
     margin-top: 50px;
     margin-left: 20px;
@@ -193,6 +198,17 @@ border:1px solid rgba(65, 35, 35, 0.874);
     opacity: 1;
     z-index: 1000;
 }
+.notice{
+    cursor: pointer;
+   padding: 10% 15%;
+   margin: 20% 70%;
+    font-family: 'Neon';
+    background-color: var(--clr-6);
+    border:1px solid var(--clr-9) ;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+}
 
 .mikazuki{
     display: flex;
@@ -200,11 +216,11 @@ border:1px solid rgba(65, 35, 35, 0.874);
     justify-content: flex-end;
     height: 100%;
     width: 100%;
-    position: relative;
     align-items: flex-end;
 }
 .mikazuki img{
     opacity: 0.8;
+   
 }
 .mikaOne {
     max-height: fit-content;
@@ -217,6 +233,23 @@ border:1px solid rgba(65, 35, 35, 0.874);
     max-height: fit-content;
     height: 60%;
     width: 150px;
+}
+.speech{
+    font-family: 'Neon';
+    background-color: var(--clr-6);
+    border:1px solid var(--clr-9) ;
+    padding: 12px;
+    margin: 20px 60px;
+    width: 100%;
+    height: fit-content;
+}
+
+.mika-speechOne{
+    position: relative;
+    word-break: keep-all;
+}
+.mika-speechTwo{
+    position: absolute;
 }
 /*----------------------------MILIEU----------------------------------------------- */
 .centre{
@@ -245,31 +278,33 @@ border:1px solid rgba(65, 35, 35, 0.874);
     margin-bottom: 20px;
 }
 .tradText{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: fit-content;
-    padding-bottom: 30px;
-    color: azure;
-    text-align:left;
-    font-family: 'Neon';
-    border-radius: 4px 5px;
-    border: #0C7175 solid 1px;
-    background-color: rgba(127, 249, 255, 0.381);
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+height: fit-content;
+padding: 15px;
+padding-bottom: 30px;
+color: azure;
+text-align:left;
+font-family: 'Roboto';
+border-radius: 4px 5px;
+}
+.japanese{
+    word-break:keep-all;
 }
 .closingButton{
-    width: fit-content;
-   margin-bottom: 70px;
-   font-family: 'Neon';
-   font-size: 20px;
-   background: rgb(114,255,214);
-   background: radial-gradient(circle, rgba(114,255,214,1) 0%, rgba(72,247,121,1) 100%);
-   border-radius: 5px;
-   cursor: pointer;
+width: fit-content;
+margin-bottom: 70px;
+font-family: 'Neon';
+font-size: 20px;
+color: #242B33;
+background: radial-gradient(circle, var(--clr-7)0%, var(--clr-8) 100%);
+border-radius: 5px;
+cursor: pointer;
 }
 .closingButton:hover{
-    background-color: aliceblue;
+    background: radial-gradient(circle, var(--clr-7) 0%, whitesmoke 100%);
     color: var(--clr-3);
     transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
@@ -278,8 +313,8 @@ border:1px solid rgba(65, 35, 35, 0.874);
     width:150px ;
     height:10px ;
     background-image: url('/img/card.png');
-    background-color: rgba(0, 255, 255, 0.076);
-    border:1px solid #0C7175 ;
+    background-color: var(--clr-6);
+    border:1px solid var(--clr-9);
     border-radius: 4px;
    transition: all  400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
@@ -336,9 +371,9 @@ transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
     margin-bottom: 60px;
 }
 button{
-    background: rgb(114,255,214);
-    background: radial-gradient(circle, rgba(114,255,214,1) 0%, rgba(72,247,121,1) 100%);
-    border:1px solid rgb(51, 255, 51) ;
+    background: var(--clr-7);
+    background: radial-gradient(circle, var(--clr-7) 0%, var(--clr-8) 100%);
+    border:1px solid var(--clr-2);
     cursor: pointer;
     font-family:'Neon';
     margin-bottom: 4px;
@@ -349,7 +384,7 @@ button{
 button:hover{
     scale: 1.3;
     border-radius: 6px;
-    background:whitesmoke ;
+    background: radial-gradient(circle, var(--clr-7) 0%, var(--clr-8)100%);
     transition: 300ms ease-in-out;
     color: var(--clr-3);
     opacity: 1;
