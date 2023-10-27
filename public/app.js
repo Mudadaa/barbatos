@@ -11,6 +11,7 @@ const app={
       app.centre=document.querySelector('.centre');
       app.milieu=document.querySelector('.ecran-milieu');
       app.tradText=document.querySelector('.tradText');
+      app.closingButton=document.querySelector('.closingButton');
       app.skills=document.querySelector('.skills');
       app.toggleDiv=document.querySelector('.normalBarbatos');
       app.scanDiv=document.querySelector('.rayBarbatos');
@@ -59,6 +60,7 @@ const app={
       //event listener pour les boutons de changement de langue
       app.intelButton.addEventListener('click',app.changeEnglish);
       app.johoButton.addEventListener('click',app.changeJapanese);
+      app.closingButton.addEventListener('click',app.closingText);
       //pour le resize qui simule l'allumage du gundam
       app.resizingTimeOut();
       app.skills.play();
@@ -140,6 +142,7 @@ changeEnglish: function(){
     app.scanDiv.style.display='none';
     app.english.removeAttribute('hidden');
     app.japanese.setAttribute("hidden", "true");
+    app.closingButton.removeAttribute('hidden');
 }
 },
 changeJapanese: function(){
@@ -148,8 +151,16 @@ changeJapanese: function(){
     app.scanDiv.style.display='none';
     app.japanese.removeAttribute('hidden');
     app.english.setAttribute("hidden", "true");
+    app.closingButton.removeAttribute('hidden');
 }
 }, 
+closingText: function(){
+  app.closingButton.setAttribute('hidden', 'true');
+  app.english.setAttribute("hidden", "true");
+  app.japanese.setAttribute("hidden", "true");
+  app.scanDiv.style.display='unset';
+  app.milieu.style.gridTemplateColumns = "1fr 1fr 1fr";
+},
   resizingLoadOne: function() {
     //pour adapter les dimesnions au format téléphone
     const mediaQuery = window.matchMedia('(max-height: 575.98px) ');
@@ -160,6 +171,7 @@ changeJapanese: function(){
         app.face.style.height = '240px';
         app.dos.style.height = '240px';
     }
+    
   //téléphone
     if (mediaQuery.matches) {
       app.scanBdos.style.height = '140px';
@@ -169,6 +181,7 @@ changeJapanese: function(){
     }
    
   },
+ 
   resizingLoadTwo: function() {
     if (app.screenR){
       app.screenR.style.height = '43vh';
