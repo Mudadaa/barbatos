@@ -205,9 +205,10 @@ border:1px solid rgba(65, 35, 35, 0.874);
     font-family: 'Neon';
     background-color: var(--clr-6);
     border:1px solid var(--clr-9) ;
-    height: fit-content;
-    width: fit-content;
-    position: relative;
+    height: 1px;
+    width: 1px;
+    transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+
 }
 
 .mikazuki{

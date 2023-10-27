@@ -243,6 +243,7 @@ closingText: function(){
         app.scanBface.style.height = '240px';
         app.face.style.height = '240px';
         app.dos.style.height = '240px';
+        
     }
     
   //téléphone
@@ -256,8 +257,12 @@ closingText: function(){
   },
  
   resizingLoadTwo: function() {
-    if (app.screenR){
+    if (app.screenR&& app.notice){
       app.screenR.style.height = '43vh';
+      app.notice.textContent="『　Attention: Initiating communication sequence.Please proceed to click.　』";
+      app.notice.style.height = 'auto';
+      app.notice.style.width = 'auto';
+    
     }
   },
   resizingLoadThree: function() {
@@ -268,8 +273,8 @@ closingText: function(){
     resizingTimeOut:function(){
       //7500, 9000, 9600
       setTimeout(app.resizingLoadOne,200);
-      setTimeout(app.resizingLoadTwo,300);
-      setTimeout(app.resizingLoadThree,400);
+      setTimeout(app.resizingLoadTwo,800);
+      setTimeout(app.resizingLoadThree,700);
     },
 };
   document.addEventListener('DOMContentLoaded', app.init);
