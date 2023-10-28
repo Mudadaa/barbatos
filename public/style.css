@@ -206,9 +206,7 @@ border:1px solid rgba(65, 35, 35, 0.874);
     background-color: var(--clr-6);
     border:1px solid var(--clr-9) ;
     height: 1px;
-    width: 1px;
     transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
-
 }
 
 .mikazuki{
@@ -229,11 +227,14 @@ border:1px solid rgba(65, 35, 35, 0.874);
     width: 150px;
    align-items: flex-end;
    margin-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .mikaTwo{
     max-height: fit-content;
-    height: 60%;
-    width: 150px;
+    height: 70%;
+    width: 200px;
 }
 .speech{
     font-family: 'Neon';
@@ -243,15 +244,15 @@ border:1px solid rgba(65, 35, 35, 0.874);
     margin: 20px 60px;
     width: 100%;
     height: fit-content;
+    cursor: pointer;
 }
 
-.mika-speechOne{
-    position: relative;
+.mika-speech{
     word-break: keep-all;
+    height: fit-content;
+    transition: 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
-.mika-speechTwo{
-    position: absolute;
-}
+
 /*----------------------------MILIEU----------------------------------------------- */
 .centre{
     grid-area: hautM/milieu/basM;

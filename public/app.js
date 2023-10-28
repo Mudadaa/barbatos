@@ -59,14 +59,14 @@ const app={
     //leftScreen Communication with MikaZuki
     app.notice=document.querySelector('.notice');
     app.speech=document.querySelector('.speech');
-    app.speechOne=document.querySelector('.mika-speechOne');
-    app.speechTwo=document.querySelector('.mika-speechTwo');
+    app.speechOne=document.querySelector('.mika-speech');
     app.mikazuki=document.querySelector('.mikazuki');
     app.mikaOne=document.querySelector('.mikaOne');
     app.mikaTwo=document.querySelector('.mikaTwo');
     app.notice.addEventListener('click',app.mikaCommunication);
     app.notice.addEventListener('click',app.mikaSpeechAddLetter);
-    app.notice.addEventListener('click',app.mikaSpeechAddLetterTwo);
+    app.mikaOne.addEventListener('click',app.mikaSpeechAddLetterTwo);
+    app.speech.addEventListener('click',app.mikaSpeechAddLetterTwo);
       //event listener pour les boutons de changement de langue
       app.intelButton.addEventListener('click',app.changeEnglish);
       app.johoButton.addEventListener('click',app.changeJapanese);
@@ -103,52 +103,75 @@ const app={
     app.mikaOne.removeAttribute('hidden');
   },
   mikaSpeechAddLetter: function(){
-    const textOne="Hey! T'es aux commandes de Barbatos! Ne l'abîmes pas sinon t'auras à faire à moi !";
-    const textContainer=app.speech;
-    let index=0;
-    let delay=50;
-    function addLetter (){
-    if(index<textOne.length){
-      const letter=document.createElement('span');
-      letter.textContent+=textOne[index];
-      textContainer.appendChild(letter);
-      index++;
-      // Délai entre chaque lettre (en millisecondes)
-      if(index % 10 === 0){
-        delay=100;
+    var text="Hey! T'es aux commandes de Barbatos! Ne l'abîmes pas !";
+    const textContainer = app.speechOne;
+  
+    // Fonction pour effacer le contenu du textContainer
+    function clearTextContainer() {
+      while (textContainer.firstChild) {
+        textContainer.removeChild(textContainer.firstChild);
+      }
     }
-      setTimeout(addLetter, delay);
-    } else{
-      app.mikaSpeechAddLetterTwo();
+  
+    clearTextContainer(); // Efface le contenu actuel
+  
+    let index = 0;
+    let delay = 50;
+  
+    function addLetter() {
+      if (index < text.length) {
+        const letter = document.createElement('span');
+        letter.textContent += text[index];
+        textContainer.appendChild(letter);
+        index++;
+        // Délai entre chaque lettre (en millisecondes)
+        if (index % 10 === 0) {
+          delay = 50;
+        }
+        setTimeout(addLetter, delay);
+      }else {
+        // La première fonction a terminé d'afficher le texte
+        // Démarrez la deuxième fonction après 4 secondes
+        setTimeout(app.mikaSpeechAddLetterTwo, 4000);
+      }
     }
-  }
-  addLetter();
+    addLetter();
   },
   mikaSpeechAddLetterTwo: function(){
-    app.speechOne.setAttribute('hidden', 'true');
+    console.log("mikaSpeech2");
     app.mikaOne.setAttribute('hidden', 'true');
-    app.speechTwo.removeAttribute('hidden');
     app.mikaTwo.removeAttribute('hidden');
-    const textTwo="Tu te débrouilles pas trop mal pour un bleu ! Passes voir Orga, notre chef, il te trouvera un poste";
-    const textContainer=app.speech;
-    let index=0;
-    let delay=50;
-    function addLetter (){
-    if(index<textOne.length){
-      const letter=document.createElement('span');
-      letter.textContent+=textTwo[index];
-      textContainer.appendChild(letter);
-      index++;
-      // Délai entre chaque lettre (en millisecondes)
-      if(index % 10 === 0){
-        delay=100;
-    }
-      setTimeout(addLetter, delay);
-  }
+    var text = "Tu te débrouilles pas trop mal pour un bleu ! Passes voir Orga, notre chef, il te trouvera un poste";
+    const textContainer = app.speechOne;
   
-}
-addLetter();
+    // Fonction pour effacer le contenu du textContainer
+    function clearTextContainer() {
+      while (textContainer.firstChild) {
+        textContainer.removeChild(textContainer.firstChild);
+      }
+    }
+  
+    clearTextContainer(); // Efface le contenu actuel
+  
+    let index = 0;
+    let delay = 50;
+  
+    function addLetter() {
+      if (index < text.length) {
+        const letter = document.createElement('span');
+        letter.textContent += text[index];
+        textContainer.appendChild(letter);
+        index++;
+        // Délai entre chaque lettre (en millisecondes)
+        if (index % 10 === 0) {
+          delay = 50;
+        }
+        setTimeout(addLetter, delay);
+      }
+    }
+    addLetter();
   },
+  
   lateralGHover: function(){
     app.gauche.style.display='none';
     app.centre.style.display='none';
@@ -259,9 +282,9 @@ closingText: function(){
   resizingLoadTwo: function() {
     if (app.screenR&& app.notice){
       app.screenR.style.height = '43vh';
-      app.notice.textContent="『　Attention: Initiating communication sequence.Please proceed to click.　』";
-      app.notice.style.height = 'auto';
-      app.notice.style.width = 'auto';
+      app.notice.textContent="『　Attention: Initiating communication sequence. Please proceed to click.　』";
+      app.notice.style.setProperty('height', 'fit-content');
+      app.notice.style.setProperty('width', 'fit-content');
     
     }
   },
