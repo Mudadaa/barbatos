@@ -65,8 +65,6 @@ const app={
     app.mikaTwo=document.querySelector('.mikaTwo');
     app.notice.addEventListener('click',app.mikaCommunication);
     app.notice.addEventListener('click',app.mikaSpeechAddLetter);
-    app.mikaOne.addEventListener('click',app.mikaSpeechAddLetterTwo);
-    app.speech.addEventListener('click',app.mikaSpeechAddLetterTwo);
       //event listener pour les boutons de changement de langue
       app.intelButton.addEventListener('click',app.changeEnglish);
       app.johoButton.addEventListener('click',app.changeJapanese);
@@ -282,10 +280,9 @@ closingText: function(){
   resizingLoadTwo: function() {
     if (app.screenR&& app.notice){
       app.screenR.style.height = '43vh';
-      app.notice.textContent="『　Attention: Initiating communication sequence. Please proceed to click.　』";
+      app.notice.textContent="『　Attention: Initiating communication sequence.  CLICK　』";
       app.notice.style.setProperty('height', 'fit-content');
       app.notice.style.setProperty('width', 'fit-content');
-    
     }
   },
   resizingLoadThree: function() {
