@@ -129,8 +129,8 @@ const app={
         setTimeout(addLetter, delay);
       }else {
         // La première fonction a terminé d'afficher le texte
-        // Démarrez la deuxième fonction après 4 secondes
-        setTimeout(app.mikaSpeechAddLetterTwo, 4000);
+        // Démarrez la deuxième fonction après 1.5 secondes
+        setTimeout(app.mikaSpeechAddLetterTwo, 1500);
       }
     }
     addLetter();
