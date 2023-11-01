@@ -6,46 +6,66 @@
 
 :root{
     --clr-1:#b23a3a;
-    --clr-2:#60df2e;
     --clr-3:#e91010;
-    --clr-6: #00ffff13;
     --clr-7: #72ffd6;
-    --clr-8: #48f779;
-    --clr-9:#0C7175;
+    --clr-8: #48f77a8e;
+    
 }
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: fit-content;
+    border-radius: 4px 6px;
+    line-height: 1.5;
+    color: aliceblue;
+}
 html{
     scroll-behavior: smooth;
-    height: 100vh;
-    width: 100vw;
-    
     overflow-x: hidden;
 
     }
-    body{
-        min-height: 100vh;
-        min-width: 100vw ;
+    body {
+        height: 100vh;
+        width: 100vw;
         font-family: 'Roboto';
-        background-color:  #242B33;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        background: url(img/space.jpg);
+        background-size: cover;
     }
+    
     .container{
-        display: flex;
-        flex-direction: column;
+        justify-content: space-evenly;
         padding-left: 15px;
-        color:  #242B33;
-        background: var(--clr-7);
-        background: radial-gradient(circle, var(--clr-7) 0%, var(--clr-8)); 
-        background-repeat: no-repeat;
-        border: 1px solid var(--clr-9);
-        border-radius: 4px 10px;
         margin: 5px 10px;
-        animation:bg-container 10s ease-in-out infinite ;
+        margin-top: 60px;
+        
+    }
+   
+  
+    .retour{
+        background-color:  var(--clr-8);
+        width: fit-content;
+        margin:15px 10px;
+        padding: 10px;
+        font-size: 20px;
+        /* animation: glow 6s ease-in-out infinite; */
+       
+    } 
+     .retour a{
+        text-decoration: none;
+         color: var(--clr-1);
+    }
+    .retour:hover{
+        background-color: whitesmoke;
+        
+        scale: 1.1;
+        cursor:pointer;
         transition: all  400ms cubic-bezier(0.39, 0.575, 0.565, 1);
     }
-    /* @keyframes bg-container {
+    .retour a:hover{
+color: var(--clr-3);
+    }
+    /* @keyframes glow {
         0%{
             background: radial-gradient(circle, var(--clr-7) 0%, var(--clr-8));
             background-position: left;
@@ -54,13 +74,67 @@ html{
             background: radial-gradient(circle, var(--clr-9) 0%, var(--clr-7)); 
             background-position: right;
         }
-    } */
-    .retour{
-        background-color: #0C7175;
-        width: fit-content;
-
-    }
+    }  */
     li{
         list-style: none;
         font-size: larger;
+        font-weight: bold;
+        color:var(--clr-3) ;
     }
+    .cockpit{
+        margin: 15px;
+        padding: 15px 60px;
+        background-color: #242b337e;
+        backdrop-filter: blur(2px);
+    }
+    h2{
+        margin-bottom: 20px;
+    }
+
+/* ////////////////////////////////////////////////////////// */
+
+.video{
+    background-color: #242b337e;
+    margin: 15px;
+    padding: 15px 60px;
+    backdrop-filter: blur(5px);
+}
+li ,p{
+    margin-bottom: 20px;
+}
+.pro{
+    height:200px ;
+    width: 200px ;
+}
+.effects{
+    height:200px  ;
+    width:200px  ;
+}
+.encoder{
+    height: 200px ;
+    width: 200px ;
+}
+.photo{
+    height:200px  ;
+    width:200px  ;
+}
+.preload{
+    height:600px  ;
+    width:1000px  ;
+}
+.transparence{
+    height:400px  ;
+    width:600px  ;
+}
+.ecretOne{
+    height:400px  ;
+    width:600px  ;
+}
+.ecretTwo{
+    height:600px  ;
+    width:600px  ;
+}
+.rotor{
+    height:600px  ;
+    width:1000px  ;
+}
