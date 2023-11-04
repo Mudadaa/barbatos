@@ -101,7 +101,7 @@ const app={
     app.mikaOne.removeAttribute('hidden');
   },
   mikaSpeechAddLetter: function(){
-    var text="Hey! T'es aux commandes de Barbatos! Ne l'abîmes pas !";
+    var text="Je suis Mikazuki, le pilote! T'es aux commandes de Barbatos! Ne l'abîmes pas !";
     const textContainer = app.speechOne;
   
     // Fonction pour effacer le contenu du textContainer
