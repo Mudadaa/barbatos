@@ -3,9 +3,11 @@
 DROP TABLE IF EXISTS "traduction";
 
 CREATE TABLE IF NOT EXISTS "traduction" (
-    -- ID est un identifiant unique pour chaque traduction serial primary key est une contrainte qui permet de ne pas avoir de doublon
+    -- ID est un identifiant unique pour chaque traduction serial primary key
+    -- est une contrainte qui permet de ne pas avoir de doublon
     "id" SERIAL PRIMARY KEY,
-    -- content est le contenu de la traduction text not null est une contrainte qui permet de ne pas avoir de traduction vide
+    -- content est le contenu de la traduction text not null est une contrainte
+    -- qui permet de ne pas avoir de traduction vide
     "content" TEXT NOT NULL
     
 );

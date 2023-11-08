@@ -155,37 +155,42 @@ li ,p{
     height:600px  ;
     width:1000px  ;
 }
-/* Styles communs pour toutes les tailles d'écran */
 
 @media screen and (max-width: 767px) {
     /* Styles spécifiques aux téléphones */
-    /* les images s'ajusteront automatiquement en conservant leur proportion
+    /* nb rappel sur max-width/height =>les images s'ajusteront automatiquement en conservant leur proportion
     (rapport hauteur/largeur) à la réduction de la largeur de leur conteneur
     parent, mais aussi à la réduction de la hauteur si nécessaire. */
     img {
         max-width: 100%;
         max-height: 100%;
       }
-      
+      nav, #scrollToTopButton{
+        right: 30px;
+      }
     main {
-      display: flex;
-      flex-direction: column;
-  justify-content: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     }
     .cockpit {
       /* Styles spécifiques aux téléphones pour .cockpit */
       display: flex;
       flex-direction: column;
-     width: 100%;
-  justify-content: center;
+      width: 100%;
+      justify-content: center;
     }
     .video {
       /* Styles spécifiques aux téléphones pour .video */
       display: flex;
       flex-direction: column;
-     width: 100%;
-  justify-content: center;
+      width: 100%;
+      justify-content: center;
+    }
+    #arrow,#tekkadan{
+        width:35px ;
+        height: 35px ;
     }
     .pro{
         height:100px  ;

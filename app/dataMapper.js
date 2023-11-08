@@ -9,9 +9,6 @@ getGundamTrad : async ()=> {
     const tradList= result.rows;
     //on renvoie la liste des traductions
     return tradList;
-    
 }
-
-
 };
 module.exports = dataMapper;
