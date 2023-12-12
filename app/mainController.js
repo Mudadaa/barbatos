@@ -1,13 +1,15 @@
-const dataMapper = require('./dataMapper.js');
+// const dataMapper = require('./dataMapper.js');
+ const traData=require('./DB/fullData.json');
 
 const mainController = {
     HomePage: async (request, response, next) => {
         try {
-            const tradList = await dataMapper.getGundamTrad();
+            const tradList = await traData.map(tradList => tradList.content);
+                
             
             response.render('accueil',{tradList});
             console.log(tradList);
-            console.log(tradList[0].content);
+             console.log(tradList[0]);
         } catch (error) {
             console.log(error)
 

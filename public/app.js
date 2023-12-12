@@ -279,40 +279,32 @@ closingText: function(){
   resizingLoadOne: function() {
     //pour adapter les dimensions au format téléphone
     const mediaQuery = window.matchMedia('(max-height: 575.98px) ');
-//pour l'effet d'ouverture d'écrans
-    if (app.face && app.dos && app.scanBface && app.scanBdos) {
-        app.scanBdos.style.height = '240px';
-        app.scanBface.style.height = '240px';
-        app.face.style.height = '240px';
-        app.dos.style.height = '240px';
-        
-    }
-    
+
   //téléphone
     if (mediaQuery.matches) {
       app.scanBdos.style.height = '140px';
         app.scanBface.style.height = '140px';
         app.face.style.height = '140px';
         app.dos.style.height = '140px';
-    }
-   
+    };
+    //pour l'effet d'ouverture d'écrans
+    app.scanBdos.style.height = '240px';
+    app.scanBface.style.height = '240px';
+    app.face.style.height = '240px';
+    app.dos.style.height = '240px';
   },
  
   resizingLoadTwo: function() {
-    if (app.screenR&& app.notice){
       app.screenR.style.height = '43vh';
-      app.notice.textContent="『　Attention: Initiating communication sequence.  CLICK　』";
+      app.notice.removeAttribute('hidden');
       app.notice.style.setProperty('height', 'fit-content');
       app.notice.style.setProperty('width', 'fit-content');
-    }
   },
   resizingLoadThree: function() {
-    if (app.screenL){
       app.screenL.style.height = '43vh';
-    }
   },
     resizingTimeOut:function(){
-      //7500, 8400, 9000
+      //200, 300, 330
       setTimeout(app.resizingLoadOne,7500);
       setTimeout(app.resizingLoadTwo,8400);
       setTimeout(app.resizingLoadThree,9000);
