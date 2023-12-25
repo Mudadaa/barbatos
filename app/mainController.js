@@ -8,7 +8,7 @@ const mainController = {
                 
             
             response.render('index',{tradList});
-            console.log(tradList);
+           
              console.log(tradList[0]);
         } catch (error) {
             console.log(error)
