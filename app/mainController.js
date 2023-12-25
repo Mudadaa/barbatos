@@ -7,7 +7,7 @@ const mainController = {
             const tradList = await traData.map(tradList => tradList.content);
                 
             
-            response.render('accueil',{tradList});
+            response.render('index',{tradList});
             console.log(tradList);
              console.log(tradList[0]);
         } catch (error) {
