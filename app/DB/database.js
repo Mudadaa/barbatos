@@ -1,7 +1,10 @@
-const pg = require('pg');
+// en raison de SOUCIS DE BUILD pour l'hébergement sur HEROKU, j'ai du changer la structure de mon projet et donc le chemin d'accès à mon fichier JSON
 
-const client = new pg.Client(process.env.PG_URL);
 
-client.connect();
+// const pg = require('pg');
 
-module.exports = client;
+// const client = new pg.Client(process.env.PG_URL);
+
+// client.connect();
+
+// module.exports = client;
