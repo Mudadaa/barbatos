@@ -4,7 +4,7 @@
 
   "version": "1.0.0",
 
-
+"description": "gundam cockpit impression ",
 
   "main": "index.js",
 
@@ -12,8 +12,9 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "start": "nodemon index.js",
-    "heroku-postbuild":"npm run build"
+    "start": "node index.js",
+    "build":"ng build",
+    "heroku-postbuild":"npm build --prod"
     
 
   },
