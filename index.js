@@ -22,7 +22,7 @@ const app = express();
 
 // 3- En utilisant cette instance d'application Express, je peux configurer des routes, définir des middlewares, écouter des requêtes HTTP, 
 // et effectuer d'autres opérations pour gérer les requêtes et les réponses dans votre application web.
-app.set('views','./app/views');
+app.set('views',path.join(__dirname, './app/views'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
