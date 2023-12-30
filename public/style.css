@@ -337,7 +337,7 @@ cursor: pointer;
 #scanBface,#scanBdos{
     width:150px ;
     height:10px ;
-    background-image: url('/img/card.png');
+    background-image: url('img/card.png');
     background-color: var(--clr-6);
     border:1px solid var(--clr-9);
     border-radius: 4px;
