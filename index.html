@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <video preload="auto" autoplay id="preloader">
+  <video autoplay id="preloader" noloop>
     <source src="/public/videos/preload.webm" type="video/webm">
   </video>
 
@@ -52,9 +52,7 @@
     <div class="centre">
       <div class="haut-milieu"></div>
       <div class="ecran-milieu">
-        <video hidden class="skills" autoplay loop>
-          <source src="./public/videos/preload.webm" type="video/webm">
-        </video>
+
         <div class="normalBarbatos">
           <img id="faceB" src="/public/img/face.png" alt="">
           <img id="dosB" src="/public/img/dos.png" hidden alt="">
@@ -99,14 +97,7 @@
     </div>
 
   </div>
-  <script>
-    var preloader = document.getElementById("preloader");
-    // faire disparaitre le preloader et  faire apparaitre le site
-    function timeOut() {
-      preloader.style.display = "none";
-    }
-    setTimeout(timeOut, 6100);
-  </script>
+
   <script src="/public/app.js"></script>
 
 
